@@ -306,6 +306,9 @@ function initialSetup() {
   let respSheet = ss.getSheetByName(SHEET_NAME_RESPONSES);
   if (!respSheet) {
     respSheet = ss.insertSheet(SHEET_NAME_RESPONSES);
+  } else {
+    // Clear old row 1 headers if re-running setup
+    respSheet.getRange(1, 1, 1, Math.max(respSheet.getLastColumn(), 60)).clearContent().clearFormat();
   }
   
   // Base columns + all Question columns
@@ -381,18 +384,24 @@ function doPost(e) {
     
     for (let i = 0; i < QUESTION_COLUMNS.length; i++) {
       const q = QUESTION_COLUMNS[i];
-      const respObj = responses[q.id];
+      const respObj = responses[q.id] || responses[q.id.replace('founders_', '')] || responses[q.num];
       let val = "";
       
-      if (respObj) {
-        const rawVal = respObj.value;
-        if (Array.isArray(rawVal)) {
-          val = rawVal.join(", ");
-        } else if (rawVal !== undefined && rawVal !== null) {
-          val = String(rawVal);
-        }
-        if (respObj.otherText) {
-          val += " (Other: " + respObj.otherText + ")";
+      if (respObj !== undefined && respObj !== null) {
+        if (typeof respObj === 'object' && !Array.isArray(respObj) && respObj.value !== undefined) {
+          const rawVal = respObj.value;
+          if (Array.isArray(rawVal)) {
+            val = rawVal.join(", ");
+          } else if (rawVal !== undefined && rawVal !== null) {
+            val = String(rawVal);
+          }
+          if (respObj.otherText) {
+            val += " (Other: " + respObj.otherText + ")";
+          }
+        } else if (Array.isArray(respObj)) {
+          val = respObj.join(", ");
+        } else {
+          val = String(respObj);
         }
       }
       
