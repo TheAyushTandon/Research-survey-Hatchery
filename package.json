@@ -9,13 +9,17 @@
     "government"
   ],
   "scripts": {
+    "dev": "npm run dev:all",
+    "dev:all": "concurrently -n \"founders,institutional,gov\" -c \"blue,green,magenta\" \"npm run dev:founders\" \"npm run dev:institutional\" \"npm run dev:government\"",
     "dev:founders": "npm run dev --workspace=founders",
     "dev:institutional": "npm run dev --workspace=institutional",
     "dev:government": "npm run dev --workspace=government",
+    "clean": "node -e \"const fs=require('fs'); ['founders/.next','institutional/.next','government/.next'].forEach(d => fs.rmSync(d, {recursive:true,force:true}))\"",
     "build:founders": "npm run build --workspace=founders",
     "build:institutional": "npm run build --workspace=institutional",
     "build:government": "npm run build --workspace=government",
     "build:all": "npm run build --workspaces",
+    "test": "node tests/integration_tests.js",
     "token:generate": "node scripts/generate-invitation-token.js"
   },
   "devDependencies": {

@@ -1,50 +1,40 @@
-'use client';
-
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
-import { Building2, GraduationCap, ArrowRight, ShieldCheck } from 'lucide-react';
-import { createInvitationToken } from '@/lib/auth';
+import { redirect } from 'next/navigation';
+import { Building2, GraduationCap, ArrowRight } from 'lucide-react';
 
-export default function InstitutionalGateway() {
-  const router = useRouter();
-  const [tokenParam, setTokenParam] = useState('');
+interface PageProps {
+  searchParams?: { token?: string };
+}
 
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const p = new URLSearchParams(window.location.search).get('token');
-      if (p) {
-        setTokenParam(`?token=${p}`);
-        try {
-          const payload = JSON.parse(atob(p.split('.')[0]));
-          if (payload.questionnaireId === 'institutional-staff') {
-            router.push(`/staff?token=${p}`);
-          } else if (payload.questionnaireId === 'institutional-faculty') {
-            router.push(`/faculty?token=${p}`);
-          }
-        } catch (e) {}
+export default function InstitutionalGateway({ searchParams }: PageProps) {
+  const token = typeof searchParams?.token === 'string' ? searchParams.token : undefined;
+
+  // If a valid token is provided in the query string, direct the respondent straight to their track
+  if (token) {
+    try {
+      const payload = JSON.parse(Buffer.from(token.split('.')[0], 'base64url').toString('utf8'));
+      if (payload.questionnaireId === 'institutional-staff') {
+        redirect(`/staff?token=${encodeURIComponent(token)}`);
+      } else if (payload.questionnaireId === 'institutional-faculty') {
+        redirect(`/faculty?token=${encodeURIComponent(token)}`);
       }
+    } catch (e) {
+      // If token parsing fails, fall through to track selection
     }
-  }, [router]);
+  }
 
-  const staffDemoToken = createInvitationToken('institutional-staff', 'staff', 60);
-  const facultyDemoToken = createInvitationToken('institutional-faculty', 'faculty', 60);
+  const staffHref = token ? `/staff?token=${encodeURIComponent(token)}` : '/staff';
+  const facultyHref = token ? `/faculty?token=${encodeURIComponent(token)}` : '/faculty';
 
   return (
     <div className="min-h-screen bg-[#fafbfc] flex flex-col justify-between">
-      <header className="border-b border-gray-100 bg-white/90 backdrop-blur-md sticky top-0 z-30">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 h-16 flex items-center space-x-3">
-          <div className="w-8 h-8 rounded-lg bg-horizon-50 border border-horizon-200 flex items-center justify-center text-horizon-600">
-            <ShieldCheck className="w-4 h-4" />
-          </div>
-          <div>
-            <span className="font-semibold text-xs tracking-wider uppercase text-gray-500 font-ubuntu">
-              Academic Research Platform
-            </span>
-            <h1 className="text-xs text-gray-400 font-ubuntu">
-              Incubator Leadership & Faculty Investigation
-            </h1>
-          </div>
+      {/* Minimal Header - Solid text only, no icons */}
+      <header className="border-b border-gray-100 bg-white sticky top-0 z-30">
+        <div className="max-w-2xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
+          <span className="text-sm font-semibold tracking-wide text-gray-900 font-ubuntu">
+            Academic Research
+          </span>
         </div>
       </header>
 
@@ -64,7 +54,7 @@ export default function InstitutionalGateway() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           {/* Group A: Incubator Managers & Operational Staff */}
           <Link
-            href={`/staff${tokenParam || `?token=${staffDemoToken}`}`}
+            href={staffHref}
             className="group bg-white rounded-2xl border border-gray-200/80 hover:border-horizon-400 p-6 transition-all hover:shadow-md flex flex-col justify-between"
           >
             <div>
@@ -89,7 +79,7 @@ export default function InstitutionalGateway() {
 
           {/* Group B: Faculty Members & Leadership */}
           <Link
-            href={`/faculty${tokenParam || `?token=${facultyDemoToken}`}`}
+            href={facultyHref}
             className="group bg-white rounded-2xl border border-gray-200/80 hover:border-horizon-400 p-6 transition-all hover:shadow-md flex flex-col justify-between"
           >
             <div>
