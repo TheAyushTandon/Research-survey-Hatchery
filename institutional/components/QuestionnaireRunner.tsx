@@ -8,8 +8,6 @@ import { IntakeScreen } from './IntakeScreen';
 import { QuestionRenderer } from './QuestionRenderer';
 import { ReviewScreen } from './ReviewScreen';
 import { CompletionScreen } from './CompletionScreen';
-import { ResumeModal } from './ResumeModal';
-import { TokenScreen } from './TokenScreen';
 import { generatePdfReport } from '../lib/pdfReport';
 import { ArrowRight, ArrowLeft } from 'lucide-react';
 
@@ -21,13 +19,12 @@ interface QuestionnaireRunnerProps {
 
 export function QuestionnaireRunner({
   config,
-  defaultToken,
+  defaultToken = '',
   apiPrefix = '/api',
 }: QuestionnaireRunnerProps) {
-  const [screen, setScreen] = useState<'TOKEN' | 'INTAKE' | 'QUESTIONS' | 'REVIEW' | 'COMPLETED'>('TOKEN');
-  const [token, setToken] = useState<string>('');
-  const [tokenError, setTokenError] = useState<string>('');
-  const [isValidatingToken, setIsValidatingToken] = useState<boolean>(false);
+  // Starts directly on INTAKE - no token gating or session ID prompt for the respondent
+  const [screen, setScreen] = useState<'INTAKE' | 'QUESTIONS' | 'REVIEW' | 'COMPLETED'>('INTAKE');
+  const [token, setToken] = useState<string>(defaultToken);
 
   const [session, setSession] = useState<SessionData | null>(null);
   const [responses, setResponses] = useState<Record<string, ResponseValue>>({});
@@ -35,7 +32,6 @@ export function QuestionnaireRunner({
   const [currentQuestionIdx, setCurrentQuestionIdx] = useState(0);
 
   const [autosaveStatus, setAutosaveStatus] = useState<'idle' | 'saving' | 'saved' | 'error'>('idle');
-  const [resumeModalOpen, setResumeModalOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isGeneratingPdf, setIsGeneratingPdf] = useState(false);
   const [validationError, setValidationError] = useState('');
@@ -46,58 +42,11 @@ export function QuestionnaireRunner({
     if (typeof window !== 'undefined') {
       const urlParams = new URLSearchParams(window.location.search);
       const urlToken = urlParams.get('token');
-      const storedToken = localStorage.getItem(`token_${config.id}`);
-      const candidateToken = urlToken || defaultToken || storedToken || '';
-
-      if (candidateToken) {
-        validateAndSetToken(candidateToken);
-      } else {
-        setScreen('TOKEN');
+      if (urlToken) {
+        setToken(urlToken);
       }
     }
-  }, [config.id, defaultToken]);
-
-  const validateAndSetToken = async (candidateToken: string) => {
-    setIsValidatingToken(true);
-    setTokenError('');
-
-    try {
-      const res = await fetch(`${apiPrefix}/invitations/validate`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          token: candidateToken,
-          expectedQuestionnaireId: config.id,
-        }),
-      });
-
-      const data = await res.json();
-      if (res.ok && data.valid) {
-        setToken(candidateToken);
-        localStorage.setItem(`token_${config.id}`, candidateToken);
-
-        if (typeof window !== 'undefined' && window.history.replaceState) {
-          const cleanUrl = window.location.pathname;
-          window.history.replaceState({}, document.title, cleanUrl);
-        }
-
-        const cachedSessionId = localStorage.getItem(`sessionId_${config.id}`);
-        if (cachedSessionId) {
-          await restoreSession(cachedSessionId);
-        } else {
-          setScreen('INTAKE');
-        }
-      } else {
-        setTokenError(data.error || 'The invitation token is invalid or unauthorized.');
-        setScreen('TOKEN');
-      }
-    } catch (err) {
-      setTokenError('Network error validating invitation token. Please check connection.');
-      setScreen('TOKEN');
-    } finally {
-      setIsValidatingToken(false);
-    }
-  };
+  }, [defaultToken]);
 
   const handleIntakeSubmit = async (respondent: RespondentInfo) => {
     setAutosaveStatus('saving');
@@ -106,7 +55,7 @@ export function QuestionnaireRunner({
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          token,
+          token: token || defaultToken,
           questionnaireId: config.id,
           respondentGroup: config.targetGroup,
           respondent,
@@ -116,7 +65,6 @@ export function QuestionnaireRunner({
       const data = await res.json();
       if (res.ok && data.session) {
         setSession(data.session);
-        localStorage.setItem(`sessionId_${config.id}`, data.session.sessionId);
         setAutosaveStatus('saved');
         setScreen('QUESTIONS');
         setCurrentSectionIdx(0);
@@ -128,44 +76,6 @@ export function QuestionnaireRunner({
     } catch (e) {
       setAutosaveStatus('error');
       alert('Network error initializing session. Please check your connection.');
-    }
-  };
-
-  const restoreSession = async (sessionIdToRestore: string, resumeCode?: string) => {
-    try {
-      const res = await fetch(`${apiPrefix}/sessions/resume`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          sessionId: sessionIdToRestore,
-          resumeCode,
-          questionnaireId: config.id,
-        }),
-      });
-
-      const data = await res.json();
-      if (res.ok && data.session) {
-        setSession(data.session);
-        setResponses(data.session.responses || {});
-        localStorage.setItem(`sessionId_${config.id}`, data.session.sessionId);
-
-        if (data.session.status === 'SUBMITTED') {
-          setScreen('COMPLETED');
-        } else {
-          const sIdx = config.sections.findIndex((s) => s.id === data.session.currentSectionId);
-          if (sIdx >= 0) {
-            setCurrentSectionIdx(sIdx);
-            const qIdx = config.sections[sIdx].questions.findIndex((q) => q.id === data.session.currentQuestionId);
-            setCurrentQuestionIdx(qIdx >= 0 ? qIdx : 0);
-          }
-          setScreen('QUESTIONS');
-        }
-        setResumeModalOpen(false);
-      } else {
-        setScreen('INTAKE');
-      }
-    } catch (e) {
-      setScreen('INTAKE');
     }
   };
 
@@ -231,94 +141,107 @@ export function QuestionnaireRunner({
             questionnaireId: config.id,
             sectionId: currentSection.id,
             questionId: q.id,
-            questionNumber: q.number,
+            questionNumber: q.num,
             questionText: q.text,
             value,
             otherText,
-            currentQuestionId: q.id,
-            currentSectionId: currentSection.id,
           }),
         });
+
         if (res.ok) {
           setAutosaveStatus('saved');
         } else {
           setAutosaveStatus('error');
         }
-      } catch (err) {
+      } catch (e) {
         setAutosaveStatus('error');
       }
     }, 400);
   };
 
-  const handleNextQuestion = () => {
+  const handlePreviousQuestion = () => {
     setValidationError('');
-    if (!currentQuestion) return;
-
-    const currentAns = responses[currentQuestion.id]?.value;
-    const isAnswered = currentAns !== undefined && (Array.isArray(currentAns) ? currentAns.length > 0 : currentAns !== '');
-
-    if (currentQuestion.required && isQuestionVisible(currentQuestion) && !isAnswered) {
-      setValidationError('Please select or specify an answer before proceeding.');
-      return;
+    if (currentQuestionIdx > 0) {
+      let prevIdx = currentQuestionIdx - 1;
+      while (prevIdx >= 0 && !isQuestionVisible(currentSection.questions[prevIdx])) {
+        prevIdx--;
+      }
+      if (prevIdx >= 0) {
+        setCurrentQuestionIdx(prevIdx);
+        return;
+      }
     }
 
-    let nextQIdx = currentQuestionIdx + 1;
-    let nextSIdx = currentSectionIdx;
+    if (currentSectionIdx > 0) {
+      const prevSecIdx = currentSectionIdx - 1;
+      const prevSec = config.sections[prevSecIdx];
+      let prevQIdx = prevSec.questions.length - 1;
+      while (prevQIdx >= 0 && !isQuestionVisible(prevSec.questions[prevQIdx])) {
+        prevQIdx--;
+      }
+      if (prevQIdx >= 0) {
+        setCurrentSectionIdx(prevSecIdx);
+        setCurrentQuestionIdx(prevQIdx);
+      }
+    }
+  };
 
-    while (nextSIdx < config.sections.length) {
-      const sec = config.sections[nextSIdx];
-      while (nextQIdx < sec.questions.length) {
-        const candQ = sec.questions[nextQIdx];
-        if (isQuestionVisible(candQ)) {
-          setCurrentSectionIdx(nextSIdx);
-          setCurrentQuestionIdx(nextQIdx);
-          window.scrollTo({ top: 0, behavior: 'smooth' });
+  const handleNextQuestion = () => {
+    if (currentQuestion && isQuestionVisible(currentQuestion)) {
+      const answer = responses[currentQuestion.id];
+      if (currentQuestion.required) {
+        if (!answer || (Array.isArray(answer.value) && answer.value.length === 0) || !answer.value) {
+          setValidationError('Please select an option to continue.');
           return;
         }
-        nextQIdx++;
       }
-      nextSIdx++;
-      nextQIdx = 0;
+
+      if (currentQuestion.type === 'limited_multi_select' && currentQuestion.maxSelections) {
+        if (Array.isArray(answer?.value) && answer.value.length > currentQuestion.maxSelections) {
+          setValidationError(`Please select at most ${currentQuestion.maxSelections} options.`);
+          return;
+        }
+      }
+    }
+
+    setValidationError('');
+
+    let nextQIdx = currentQuestionIdx + 1;
+    while (nextQIdx < currentSection.questions.length) {
+      if (isQuestionVisible(currentSection.questions[nextQIdx])) {
+        setCurrentQuestionIdx(nextQIdx);
+        return;
+      }
+      nextQIdx++;
+    }
+
+    if (currentSectionIdx < config.sections.length - 1) {
+      let nextSecIdx = currentSectionIdx + 1;
+      while (nextSecIdx < config.sections.length) {
+        const nextSec = config.sections[nextSecIdx];
+        const firstVis = nextSec.questions.findIndex((q) => isQuestionVisible(q));
+        if (firstVis !== -1) {
+          setCurrentSectionIdx(nextSecIdx);
+          setCurrentQuestionIdx(firstVis);
+          return;
+        }
+        nextSecIdx++;
+      }
     }
 
     setScreen('REVIEW');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const handlePreviousQuestion = () => {
-    setValidationError('');
-    let prevQIdx = currentQuestionIdx - 1;
-    let prevSIdx = currentSectionIdx;
-
-    while (prevSIdx >= 0) {
-      const sec = config.sections[prevSIdx];
-      while (prevQIdx >= 0) {
-        const candQ = sec.questions[prevQIdx];
-        if (isQuestionVisible(candQ)) {
-          setCurrentSectionIdx(prevSIdx);
-          setCurrentQuestionIdx(prevQIdx);
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-          return;
-        }
-        prevQIdx--;
-      }
-      prevSIdx--;
-      if (prevSIdx >= 0) {
-        prevQIdx = config.sections[prevSIdx].questions.length - 1;
-      }
-    }
-  };
-
-  const handleEditFromReview = (secIdx: number, qIdx: number) => {
-    setCurrentSectionIdx(secIdx);
-    setCurrentQuestionIdx(qIdx);
+  const handleEditFromReview = (sectionIndex: number, questionIndex: number) => {
+    setCurrentSectionIdx(sectionIndex);
+    setCurrentQuestionIdx(questionIndex);
     setScreen('QUESTIONS');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleFinalSubmit = async () => {
     if (!session) return;
     setIsSubmitting(true);
+    setAutosaveStatus('saving');
 
     try {
       const res = await fetch(`${apiPrefix}/sessions/submit`, {
@@ -327,42 +250,39 @@ export function QuestionnaireRunner({
         body: JSON.stringify({
           sessionId: session.sessionId,
           questionnaireId: config.id,
+          finalResponses: responses,
         }),
       });
 
       const data = await res.json();
-      if (res.ok && data.success) {
-        setSession((prev) => (prev ? { ...prev, status: 'SUBMITTED', submittedAt: data.submittedAt } : null));
+      if (res.ok && data.session) {
+        setSession(data.session);
+        setAutosaveStatus('saved');
         setScreen('COMPLETED');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
       } else {
-        alert(data.error || 'Submission failed. Please check connection and retry.');
+        alert(data.error || 'Submission failed. Please try again.');
+        setAutosaveStatus('error');
       }
     } catch (e) {
-      alert('Error connecting to server during submission. Please try again.');
+      alert('Network error submitting questionnaire. Please try again.');
+      setAutosaveStatus('error');
     } finally {
       setIsSubmitting(false);
     }
   };
 
-  const handleDownloadPdf = () => {
-    if (!session || !session.respondent) {
-      alert('Session data is required to compile report.');
-      return;
-    }
+  const handleDownloadPdf = async () => {
+    if (!session) return;
     setIsGeneratingPdf(true);
     try {
-      const doc = generatePdfReport(
+      await generatePdfReport({
         config,
-        session.respondent,
+        session,
         responses,
-        session.sessionId,
-        session.submittedAt || new Date().toISOString()
-      );
-      doc.save(`Research_Report_${config.id}_${session.sessionId.slice(0, 8)}.pdf`);
-    } catch (err) {
-      console.error('PDF Generation Error:', err);
-      alert('Error generating PDF report. Please try again.');
+      });
+    } catch (e) {
+      console.error('PDF generation error:', e);
+      alert('Failed to generate PDF. Please try again.');
     } finally {
       setIsGeneratingPdf(false);
     }
@@ -371,12 +291,11 @@ export function QuestionnaireRunner({
   const overallStats = useMemo(() => {
     let total = 0;
     let answered = 0;
-    config.sections.forEach((s) => {
-      s.questions.forEach((q) => {
-        if (!isQuestionVisible(q)) return;
-        total++;
-        if (responses[q.id]?.value !== undefined && responses[q.id]?.value !== '') {
-          answered++;
+    config.sections.forEach((sec) => {
+      sec.questions.forEach((q) => {
+        if (isQuestionVisible(q)) {
+          total++;
+          if (responses[q.id]?.value) answered++;
         }
       });
     });
@@ -384,33 +303,18 @@ export function QuestionnaireRunner({
   }, [config, responses]);
 
   return (
-    <div className="min-h-screen flex flex-col justify-between bg-[#fafbfc]">
+    <div className="min-h-screen bg-[#fafbfc] flex flex-col justify-between">
       <div>
         <Header
-          title={config.title}
-          targetGroup={config.targetGroup}
           autosaveStatus={autosaveStatus}
-          sessionId={session?.sessionId}
-          onOpenResume={() => setResumeModalOpen(true)}
           onRetrySave={() => {
-            if (currentQuestion) {
-              triggerAutosave(currentQuestion, responses[currentQuestion.id]?.value);
+            if (currentQuestion && responses[currentQuestion.id]) {
+              triggerAutosave(currentQuestion, responses[currentQuestion.id].value, responses[currentQuestion.id].otherText);
             }
           }}
         />
 
         <main className="max-w-2xl mx-auto px-4 sm:px-6 py-6 w-full">
-          {screen === 'TOKEN' && (
-            <TokenScreen
-              questionnaireId={config.id}
-              targetGroup={config.targetGroup}
-              onTokenSubmitted={validateAndSetToken}
-              isValidating={isValidatingToken}
-              errorMessage={tokenError}
-              demoToken={defaultToken}
-            />
-          )}
-
           {screen === 'INTAKE' && (
             <IntakeScreen
               title={config.title}
@@ -492,9 +396,7 @@ export function QuestionnaireRunner({
 
           {screen === 'COMPLETED' && session && (
             <CompletionScreen
-              sessionId={session.sessionId}
               submissionTimestamp={session.submittedAt || new Date().toISOString()}
-              respondentName={session.respondent?.fullName || 'Participant'}
               onDownloadPdf={handleDownloadPdf}
               isGeneratingPdf={isGeneratingPdf}
             />
@@ -503,14 +405,8 @@ export function QuestionnaireRunner({
       </div>
 
       <footer className="border-t border-gray-100 py-4 text-center text-[11px] text-gray-400 font-ubuntu">
-        Academic Research Questionnaire Platform · India Business Incubator Study
+        Academic Research Questionnaire Platform · Institutional Deployment
       </footer>
-
-      <ResumeModal
-        isOpen={resumeModalOpen}
-        onClose={() => setResumeModalOpen(false)}
-        onResume={(sId, code) => restoreSession(sId, code)}
-      />
     </div>
   );
 }

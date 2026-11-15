@@ -8,9 +8,11 @@ export async function POST(req: NextRequest) {
     const body = await req.json();
     const { token, questionnaireId, respondentGroup, respondent } = body;
 
-    const tokenCheck = verifyInvitationToken(token, questionnaireId);
-    if (!tokenCheck.valid) {
-      return NextResponse.json({ error: tokenCheck.error || 'Unauthorized' }, { status: 401 });
+    if (token) {
+      const tokenCheck = verifyInvitationToken(token, questionnaireId);
+      if (!tokenCheck.valid && tokenCheck.error?.includes('endpoint requires')) {
+        return NextResponse.json({ error: tokenCheck.error }, { status: 401 });
+      }
     }
 
     const sessionId = uuidv4();
@@ -46,7 +48,7 @@ export async function POST(req: NextRequest) {
 }
 
 function getSpreadsheetId(qId: string) {
-  if (qId === 'founders') return process.env.FOUNDERS_SPREADSHEET_ID;
+  if (qId === 'institutional') return process.env.INSTITUTIONAL_SPREADSHEET_ID || process.env.SPREADSHEET_ID;
   if (qId === 'institutional-staff') return process.env.INSTITUTIONAL_STAFF_SPREADSHEET_ID;
   if (qId === 'institutional-faculty') return process.env.INSTITUTIONAL_FACULTY_SPREADSHEET_ID;
   if (qId === 'government') return process.env.GOVERNMENT_SPREADSHEET_ID;

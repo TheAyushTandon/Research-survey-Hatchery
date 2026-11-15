@@ -6,15 +6,11 @@ interface HeaderProps {
   title?: string;
   targetGroup?: string;
   autosaveStatus: 'idle' | 'saving' | 'saved' | 'error';
-  sessionId?: string;
-  onOpenResume?: () => void;
   onRetrySave?: () => void;
 }
 
 export function Header({
   autosaveStatus,
-  sessionId,
-  onOpenResume,
   onRetrySave,
 }: HeaderProps) {
   return (
@@ -25,40 +21,26 @@ export function Header({
           Academic Research
         </span>
 
-        {/* Minimal status & resume action */}
+        {/* Minimal autosave indicator */}
         <div className="flex items-center space-x-3 text-xs font-ubuntu">
-          {sessionId && (
-            <div>
-              {autosaveStatus === 'saving' && (
-                <span className="text-gray-400 flex items-center">
-                  <span className="inline-block w-1.5 h-1.5 rounded-full bg-horizon-400 animate-pulse mr-1.5" />
-                  Saving...
-                </span>
-              )}
-              {autosaveStatus === 'saved' && (
-                <span className="text-emerald-600 font-medium flex items-center">
-                  <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-500 mr-1.5" />
-                  Saved
-                </span>
-              )}
-              {autosaveStatus === 'error' && (
-                <button
-                  onClick={onRetrySave}
-                  className="text-red-500 hover:text-red-600 underline cursor-pointer"
-                >
-                  Retry save
-                </button>
-              )}
-            </div>
+          {autosaveStatus === 'saving' && (
+            <span className="text-gray-400 flex items-center">
+              <span className="inline-block w-1.5 h-1.5 rounded-full bg-horizon-400 animate-pulse mr-1.5" />
+              Saving...
+            </span>
           )}
-
-          {onOpenResume && (
+          {autosaveStatus === 'saved' && (
+            <span className="text-emerald-600 font-medium flex items-center">
+              <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-500 mr-1.5" />
+              Saved
+            </span>
+          )}
+          {autosaveStatus === 'error' && (
             <button
-              onClick={onOpenResume}
-              type="button"
-              className="text-gray-400 hover:text-gray-700 text-xs transition cursor-pointer"
+              onClick={onRetrySave}
+              className="text-red-500 hover:text-red-600 underline cursor-pointer"
             >
-              Resume
+              Retry save
             </button>
           )}
         </div>

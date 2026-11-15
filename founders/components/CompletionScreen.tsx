@@ -1,30 +1,19 @@
 'use client';
 
-import React, { useState } from 'react';
-import { CheckCircle2, Download, Copy, Check } from 'lucide-react';
+import React from 'react';
+import { CheckCircle2, Download } from 'lucide-react';
 
 interface CompletionScreenProps {
-  sessionId: string;
   submissionTimestamp: string;
-  respondentName?: string;
   onDownloadPdf: () => void;
   isGeneratingPdf?: boolean;
 }
 
 export function CompletionScreen({
-  sessionId,
   submissionTimestamp,
   onDownloadPdf,
   isGeneratingPdf = false,
 }: CompletionScreenProps) {
-  const [copied, setCopied] = useState(false);
-
-  const handleCopy = () => {
-    navigator.clipboard.writeText(sessionId);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
-
   return (
     <div className="w-full max-w-xl mx-auto py-12 px-4 sm:px-6 text-center animate-fadeIn">
       <div className="w-16 h-16 rounded-full bg-celadon-light border-2 border-celadon-dark/40 flex items-center justify-center text-celadon-dark mx-auto mb-6 shadow-sm">
@@ -38,37 +27,8 @@ export function CompletionScreen({
         Thank you for your valuable contribution. Your responses have been anonymously and securely recorded in the academic research database.
       </p>
 
-      <div className="bg-white rounded-2xl border border-gray-100 p-6 text-left shadow-xs mb-8 space-y-4">
-        <div>
-          <span className="text-[11px] font-bold uppercase tracking-wider text-gray-400 font-ubuntu">
-            Anonymous Research Session Reference
-          </span>
-          <div className="mt-1 flex items-center justify-between bg-gray-50 border border-gray-200/60 rounded-xl px-3.5 py-2.5">
-            <span className="font-mono text-xs sm:text-sm text-gray-800 break-all select-all">
-              {sessionId}
-            </span>
-            <button
-              onClick={handleCopy}
-              type="button"
-              className="ml-2 inline-flex items-center text-xs font-medium text-horizon-600 hover:text-horizon-700 bg-white border border-gray-200 px-2.5 py-1.5 rounded-md transition shadow-2xs cursor-pointer"
-              title="Copy Reference ID"
-            >
-              {copied ? (
-                <>
-                  <Check className="w-3.5 h-3.5 mr-1 text-green-600" />
-                  <span className="text-green-600">Copied</span>
-                </>
-              ) : (
-                <>
-                  <Copy className="w-3.5 h-3.5 mr-1" />
-                  <span>Copy</span>
-                </>
-              )}
-            </button>
-          </div>
-        </div>
-
-        <div className="flex items-center justify-between text-xs text-gray-500 font-ubuntu pt-2 border-t border-gray-100">
+      <div className="bg-white rounded-2xl border border-gray-100 p-6 text-left shadow-xs mb-8">
+        <div className="flex items-center justify-between text-xs text-gray-500 font-ubuntu">
           <span>Submission Time:</span>
           <span className="font-medium text-gray-700">
             {new Date(submissionTimestamp).toLocaleString()}
