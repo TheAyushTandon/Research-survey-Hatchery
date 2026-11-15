@@ -1,120 +1,185 @@
 import { QuestionnaireConfig } from '../lib/types';
+
 export const facultyQuestionnaire: QuestionnaireConfig = {
   id: "institutional-faculty",
-  title: "Academic Entrepreneurship & Institutional Innovation Alignment",
-  shortTitle: "Faculty Members & University Leadership",
-  targetGroup: "University Deans, Heads of Departments, Vice Chancellors & Associated Faculty",
-  description: "This research segment investigates university leadership perspectives on entrepreneurial culture, academic technology transfer, and university-industry-government alignment.",
-  instructions: ["Please answer the following evaluation questions regarding your faculty/university incubation ecosystem.", "Responses are completely confidential and used solely for academic research.", "Autosaved continuously."],
-  confidentialityNotice: 'All responses will be kept strictly confidential and used solely for academic research purposes. Individual identifying information will never be publicly associated with your answers.',
-  consentStatement: "I confirm my role as a faculty member or university administrator and consent to contribute to this academic research study.",
+  title: "Questionnaire for Incubator Managers and Operational Staff / Faculty Members",
+  shortTitle: "Group B: Faculty Members & University Leadership",
+  targetGroup: "Faculty Members (University Deans, HoDs, and VCs)",
+  description: "This research segment assesses academic entrepreneurship culture, faculty incentive structures, IP commercialization, and university executive leadership commitment to local innovation ecosystems.",
+  instructions: [
+    "Please answer the following questions based on your experience. All responses will be kept confidential and used only for academic research purposes.",
+    "Please select the most appropriate option for each question.",
+    "Your progress is continuously autosaved. You may safely resume at any time."
+  ],
+  confidentialityNotice: "This survey is completely anonymous. No personally identifying information (such as your name, email address, or contact number) is collected or stored.",
+  consentStatement: "I agree to participate in this anonymous academic research study. I understand that my responses are voluntary and will be analyzed in aggregate for academic research purposes.",
   sections: [
     {
       id: "group_b",
-      title: "Group B: Faculty Members (Deans, HoDs, and VCs)",
-      description: "Assessment of academic entrepreneurship, curriculum integration, and institutional alignment.",
+      title: "Group B: Faculty Members (University Deans, HoDs, and VCs)",
+      description: "Academic entrepreneurship, curriculum integration, and institutional alignment with incubation programmes.",
       questions: [
         {
           id: "faculty_q1",
           sectionId: "group_b",
           number: "Q1",
           text: "How actively does your faculty or department leadership promote an entrepreneurial culture alongside traditional basic research academic tracks?",
-          type: "likert_5",
-          options: ["A) Not at all actively", "B) Slightly actively", "C) Moderately actively", "D) Very actively", "E) Extremely actively"],
+          type: "single_select",
+          options: [
+            "Not at all actively",
+            "Slightly actively",
+            "Moderately actively",
+            "Very actively",
+            "Extremely actively"
+          ],
           hasOther: false,
-          required: true,
+          required: true
         },
         {
           id: "faculty_q2",
           sectionId: "group_b",
           number: "Q2",
-          text: "Do you believe your university\u2019s current tenure and promotion policies sufficiently reward faculty who actively engage in academic entrepreneurship?",
-          type: "likert_5",
-          options: ["A) Strongly disagree", "B) Disagree", "C) Neutral", "D) Agree", "E) Strongly agree"],
+          text: "Do you believe your university’s current tenure and promotion policies sufficiently reward faculty who actively engage in academic entrepreneurship?",
+          type: "single_select",
+          options: [
+            "Strongly disagree",
+            "Disagree",
+            "Neutral",
+            "Agree",
+            "Strongly agree"
+          ],
           hasOther: false,
-          required: true,
+          required: true
         },
         {
           id: "faculty_q3",
           sectionId: "group_b",
           number: "Q3",
           text: "How effectively does your university transfer intellectual property and scientific research to commercial marketplace buyers?",
-          type: "likert_5",
-          options: ["A) Not at all effectively", "B) Slightly effectively", "C) Moderately effectively", "D) Very effectively", "E) Extremely effectively"],
+          type: "single_select",
+          options: [
+            "Not at all effectively",
+            "Slightly effectively",
+            "Moderately effectively",
+            "Very effectively",
+            "Extremely effectively"
+          ],
           hasOther: false,
-          required: true,
+          required: true
         },
         {
           id: "faculty_q4",
           sectionId: "group_b",
           number: "Q4",
           text: "Do you systematically encourage student researchers to test their technological concepts via customer discovery interviews before submitting peer-reviewed papers?",
-          type: "likert_5",
-          options: ["A) Strongly disagree", "B) Disagree", "C) Neutral", "D) Agree", "E) Strongly agree"],
+          type: "single_select",
+          options: [
+            "Strongly disagree",
+            "Disagree",
+            "Neutral",
+            "Agree",
+            "Strongly agree"
+          ],
           hasOther: false,
-          required: true,
+          required: true
         },
         {
           id: "faculty_q5",
           sectionId: "group_b",
           number: "Q5",
           text: "What level of structural support does your university leadership receive from government policy frameworks to operationalize incubation infrastructure?",
-          type: "likert_5",
-          options: ["A) No support", "B) Low support", "C) Moderate support", "D) High support", "E) Very high support"],
+          type: "single_select",
+          options: [
+            "No support",
+            "Low support",
+            "Moderate support",
+            "High support",
+            "Very high support"
+          ],
           hasOther: false,
-          required: true,
+          required: true
         },
         {
           id: "faculty_q6",
           sectionId: "group_b",
           number: "Q6",
           text: "Do your engineering or business curricula explicitly incorporate Lean Startup methodology concepts like Minimum Viable Product (MVP) design?",
-          type: "likert_5",
-          options: ["A) Strongly disagree", "B) Disagree", "C) Neutral", "D) Agree", "E) Strongly agree"],
+          type: "single_select",
+          options: [
+            "Strongly disagree",
+            "Disagree",
+            "Neutral",
+            "Agree",
+            "Strongly agree"
+          ],
           hasOther: false,
-          required: true,
+          required: true
         },
         {
           id: "faculty_q7",
           sectionId: "group_b",
           number: "Q7",
           text: "How frequently do active industry experts serve on your academic department's steering committees to co-create market-relevant research agendas?",
-          type: "likert_5",
-          options: ["A) Never", "B) Rarely", "C) Sometimes", "D) Often", "E) Always"],
+          type: "single_select",
+          options: [
+            "Never",
+            "Rarely",
+            "Sometimes",
+            "Often",
+            "Always"
+          ],
           hasOther: false,
-          required: true,
+          required: true
         },
         {
           id: "faculty_q8",
           sectionId: "group_b",
           number: "Q8",
           text: "Do you face institutional stress between meeting academic publication targets and delivering commercially viable spinoff metrics for the incubator?",
-          type: "likert_5",
-          options: ["A) Strongly disagree", "B) Disagree", "C) Neutral", "D) Agree", "E) Strongly agree"],
+          type: "single_select",
+          options: [
+            "Strongly disagree",
+            "Disagree",
+            "Neutral",
+            "Agree",
+            "Strongly agree"
+          ],
           hasOther: false,
-          required: true,
+          required: true
         },
         {
           id: "faculty_q9",
           sectionId: "group_b",
           number: "Q9",
           text: "How open is your current executive leadership team to relaxing university equity-share rules to attract private venture capitalist investment?",
-          type: "likert_5",
-          options: ["A) Not at all open", "B) Slightly open", "C) Moderately open", "D) Very open", "E) Extremely open"],
+          type: "single_select",
+          options: [
+            "Not at all open",
+            "Slightly open",
+            "Moderately open",
+            "Very open",
+            "Extremely open"
+          ],
           hasOther: false,
-          required: true,
+          required: true
         },
         {
           id: "faculty_q10",
           sectionId: "group_b",
           number: "Q10",
           text: "What is the overall commitment level of top-tier university administration to building an active local Triple Helix innovation ecosystem?",
-          type: "likert_5",
-          options: ["A) No commitment", "B) Low commitment", "C) Moderate commitment", "D) High commitment", "E) Very high commitment"],
+          type: "single_select",
+          options: [
+            "No commitment",
+            "Low commitment",
+            "Moderate commitment",
+            "High commitment",
+            "Very high commitment"
+          ],
           hasOther: false,
-          required: true,
-        },
-      ],
-    },
-  ],
+          required: true
+        }
+      ]
+    }
+  ]
 };
