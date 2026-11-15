@@ -9,8 +9,7 @@ export const institutionalQuestionnaire: QuestionnaireConfig = {
   "instructions": [
     "Your responses will be used solely for academic research purposes and are completely anonymous.",
     "Please answer each question honestly based on your institutional experience.",
-    "For each question, select the single most appropriate option.",
-    "Your progress is continuously autosaved. You may safely resume at any time."
+    "For each question, select the single most appropriate option."
   ],
   "confidentialityNotice": "This survey is completely anonymous. No personally identifying information (such as your name, email address, or contact number) is collected or stored.",
   "consentStatement": "I agree to participate in this anonymous academic research study. I understand that my responses are voluntary and will be analyzed in aggregate for academic research purposes.",

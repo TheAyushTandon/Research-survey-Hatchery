@@ -8,8 +8,7 @@ export const staffQuestionnaire: QuestionnaireConfig = {
   description: "This research evaluates Lean Startup feedback loop implementation (Build-Measure-Learn), validated metrics, and trilateral institutional networks from the perspective of incubator leadership and staff.",
   instructions: [
     "Please answer the following questions based on your experience. All responses will be kept confidential and used only for academic research purposes.",
-    "Please select the most appropriate option for each question.",
-    "Your progress is continuously autosaved. You may safely resume at any time."
+    "Please select the most appropriate option for each question."
   ],
   confidentialityNotice: "This survey is completely anonymous. No personally identifying information (such as your name, email address, or contact number) is collected or stored.",
   consentStatement: "I agree to participate in this anonymous academic research study. I understand that my responses are voluntary and will be analyzed in aggregate for academic research purposes.",

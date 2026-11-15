@@ -10,8 +10,7 @@ export const foundersQuestionnaire: QuestionnaireConfig = {
     'Your responses will be used solely for academic research purposes and are completely anonymous.',
     'There are no right or wrong answers. Please answer each question honestly based on your experience.',
     'For questions marked \'Select all that apply\', you may choose more than one response. For all other questions, select one response.',
-    'Questions regarding incubator affiliation adapt dynamically based on your incubation status.',
-    'Your progress is continuously autosaved. You may safely resume at any time.'
+    'Questions regarding incubator affiliation adapt dynamically based on your incubation status.'
   ],
   confidentialityNotice: 'This survey is completely anonymous. No personally identifying information (such as your name, email address, or contact number) is collected or stored.',
   consentStatement: 'I agree to participate in this anonymous academic research study. I understand that my responses are voluntary and will be analyzed in aggregate for academic research purposes.',

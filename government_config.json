@@ -378,7 +378,7 @@
   {
     "id": "sec_b_h2",
     "title": "Section B — Hypothesis 2",
-    "description": "H2: Strong collaboration among the government, industry, and academia reduces the time required for funders to plan and execute their business models.",
+    "description": "H2: Strong collaboration among the government, industry, and academia reduces the time required for founders to plan and execute their business models.",
     "questions": [
       {
         "id": "gov_h2_q1",
@@ -449,10 +449,17 @@
         ],
         "hasOther": false,
         "required": true
-      },
+      }
+    ]
+  },
+  {
+    "id": "sec_b_h3",
+    "title": "Section B — Hypothesis 3",
+    "description": "H3: Adoption of Lean Startup practices by startups enhances the effective utilisation of government support and improves the achievement of programme objectives.",
+    "questions": [
       {
-        "id": "gov_h2_q6",
-        "number": "Q6",
+        "id": "gov_h3_q1",
+        "number": "Q1",
         "text": "How effectively do Lean Startup practices help founders utilize government funding for validating customer needs before large-scale investment?",
         "type": "likert_4",
         "options": [
@@ -462,11 +469,12 @@
           "D) Highly effective"
         ],
         "hasOther": false,
-        "required": true
+        "required": true,
+        "num": "Q1"
       },
       {
-        "id": "gov_h2_q7",
-        "number": "Q7",
+        "id": "gov_h3_q2",
+        "number": "Q2",
         "text": "Compared with traditional approaches, how efficiently does the Lean Startup approach help founders achieve the milestones required by government-funded programmes?",
         "type": "likert_4",
         "options": [
@@ -476,11 +484,12 @@
           "D) Much more efficiently"
         ],
         "hasOther": false,
-        "required": true
+        "required": true,
+        "num": "Q2"
       },
       {
-        "id": "gov_h2_q8",
-        "number": "Q8",
+        "id": "gov_h3_q3",
+        "number": "Q3",
         "text": "To what extent does the Lean Startup approach reduce unnecessary expenditure when using government grants or financial assistance?",
         "type": "likert_4",
         "options": [
@@ -490,11 +499,12 @@
           "D) To a great extent"
         ],
         "hasOther": false,
-        "required": true
+        "required": true,
+        "num": "Q3"
       },
       {
-        "id": "gov_h2_q9",
-        "number": "Q9",
+        "id": "gov_h3_q4",
+        "number": "Q4",
         "text": "How helpful are Lean Startup practices in enabling founders to quickly respond to changes in government policies, funding guidelines, or compliance requirements?",
         "type": "likert_4",
         "options": [
@@ -504,11 +514,12 @@
           "D) Highly helpful"
         ],
         "hasOther": false,
-        "required": true
+        "required": true,
+        "num": "Q4"
       },
       {
-        "id": "gov_h2_q10",
-        "number": "Q10",
+        "id": "gov_h3_q5",
+        "number": "Q5",
         "text": "How much has the Lean Startup approach improved your startup's ability to maximize the benefits of government support programmes?",
         "type": "likert_4",
         "options": [
@@ -518,7 +529,8 @@
           "D) To a very great extent"
         ],
         "hasOther": false,
-        "required": true
+        "required": true,
+        "num": "Q5"
       }
     ]
   },

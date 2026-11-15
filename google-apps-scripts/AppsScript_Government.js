@@ -137,52 +137,52 @@ const QUESTION_COLUMNS = [
   {
     "id": "gov_h2_q1",
     "num": "Q1",
-    "header": "[Q1] When the government, companies, and universities work together, it helps new ..."
+    "header": "[H2 Q1] When the government, companies, and universities work together, it helps new founders plan their businesses much faster."
   },
   {
     "id": "gov_h2_q2",
     "num": "Q2",
-    "header": "[Q2] Having access to joint programs helps founders avoid government red tape and ..."
+    "header": "[H2 Q2] Having access to joint programs helps founders avoid government red tape and delays while building their business."
   },
   {
     "id": "gov_h2_q3",
     "num": "Q3",
-    "header": "[Q3] Strong teamwork between these three groups shortens the time it takes for a f..."
+    "header": "[H2 Q3] Strong teamwork between these three groups shortens the time it takes for a founder to launch their business."
   },
   {
     "id": "gov_h2_q4",
     "num": "Q4",
-    "header": "[Q4] Advice from industry experts through the incubator helps founders test and ru..."
+    "header": "[H2 Q4] Advice from industry experts through the incubator helps founders test and run their business models quicker."
   },
   {
     "id": "gov_h2_q5",
     "num": "Q5",
-    "header": "[Q5] Getting support and guidance from policymakers, business experts, and teacher..."
+    "header": "[H2 Q5] Getting support and guidance from policymakers, business experts, and teachers all at once cuts down on costly mistakes and delays."
   },
   {
-    "id": "gov_h2_q6",
-    "num": "Q6",
-    "header": "[Q6] How effectively do Lean Startup practices help founders utilize government fu..."
+    "id": "gov_h3_q1",
+    "num": "Q1",
+    "header": "[H3 Q1] How effectively do Lean Startup practices help founders utilize government funding for validating customer needs?"
   },
   {
-    "id": "gov_h2_q7",
-    "num": "Q7",
-    "header": "[Q7] Compared with traditional approaches, how efficiently does the Lean Startup a..."
+    "id": "gov_h3_q2",
+    "num": "Q2",
+    "header": "[H3 Q2] Compared with traditional approaches, how efficiently does Lean Startup help achieve government milestones?"
   },
   {
-    "id": "gov_h2_q8",
-    "num": "Q8",
-    "header": "[Q8] To what extent does the Lean Startup approach reduce unnecessary expenditure ..."
+    "id": "gov_h3_q3",
+    "num": "Q3",
+    "header": "[H3 Q3] To what extent does Lean Startup reduce unnecessary expenditure when using government grants?"
   },
   {
-    "id": "gov_h2_q9",
-    "num": "Q9",
-    "header": "[Q9] How helpful are Lean Startup practices in enabling founders to quickly respon..."
+    "id": "gov_h3_q4",
+    "num": "Q4",
+    "header": "[H3 Q4] How helpful are Lean Startup practices in enabling founders to respond to government policy changes?"
   },
   {
-    "id": "gov_h2_q10",
-    "num": "Q10",
-    "header": "[Q10] How much has the Lean Startup approach improved your startup's ability to max..."
+    "id": "gov_h3_q5",
+    "num": "Q5",
+    "header": "[H3 Q5] How much has the Lean Startup approach improved ability to maximize benefits of government programmes?"
   },
   {
     "id": "gov_c_q1",
@@ -324,7 +324,15 @@ function doPost(e) {
     
     for (let i = 0; i < QUESTION_COLUMNS.length; i++) {
       const q = QUESTION_COLUMNS[i];
-      const respObj = responses[q.id] || responses[q.id.replace('gov_', 'gov_sec_')] || responses[q.num];
+      let respObj = responses[q.id];
+      if (!respObj && q.id.indexOf("gov_h3_q") === 0) {
+        const h3Num = parseInt(q.id.replace("gov_h3_q", ""), 10);
+        const legacyH2Id = "gov_h2_q" + (h3Num + 5);
+        respObj = responses[legacyH2Id];
+      }
+      if (!respObj) {
+        respObj = responses[q.id.replace('gov_', 'gov_sec_')] || responses[q.num];
+      }
       let val = "";
       
       if (respObj !== undefined && respObj !== null) {

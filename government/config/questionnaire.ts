@@ -5,7 +5,7 @@ export const governmentQuestionnaire: QuestionnaireConfig = {
   shortTitle: "Government Agencies & Policymakers",
   targetGroup: "Central/State Ministries, Funding Agencies, PSUs, Science Councils & Innovation Missions",
   description: "This study evaluates the role of government financial, regulatory, and policy support in strengthening academic business incubators and accelerating startup innovation.",
-  instructions: ["Please answer the questions based on your organization's experience with Academic Business Incubators.", "All responses are confidential and utilized solely for scholarly analysis.", "Autosave ensures your inputs are preserved continuously throughout your session."],
+  instructions: ["Please answer the questions based on your organization's experience with Academic Business Incubators.", "All responses are confidential and utilized solely for scholarly analysis."],
   confidentialityNotice: 'All responses will be kept strictly confidential and used solely for academic research purposes. Individual identifying information will never be publicly associated with your answers.',
   consentStatement: "I confirm that I represent a government agency, department, or affiliated body, and consent to participate in this academic research on business incubators.",
   sections: [
@@ -245,8 +245,8 @@ export const governmentQuestionnaire: QuestionnaireConfig = {
     },
     {
       id: "sec_b_h2",
-      title: "Section B \u2014 Hypothesis 2",
-      description: "H2: Strong collaboration among the government, industry, and academia reduces the time required for funders to plan and execute their business models.",
+      title: "Section B — Hypothesis 2",
+      description: "H2: Strong collaboration among the government, industry, and academia reduces the time required for founders to plan and execute their business models.",
       questions: [
         {
           id: "gov_h2_q1",
@@ -298,10 +298,17 @@ export const governmentQuestionnaire: QuestionnaireConfig = {
           hasOther: false,
           required: true,
         },
+      ],
+    },
+    {
+      id: "sec_b_h3",
+      title: "Section B — Hypothesis 3",
+      description: "H3: Adoption of Lean Startup practices by startups enhances the effective utilisation of government support and improves the achievement of programme objectives.",
+      questions: [
         {
-          id: "gov_h2_q6",
-          sectionId: "sec_b_h2",
-          number: "Q6",
+          id: "gov_h3_q1",
+          sectionId: "sec_b_h3",
+          number: "Q1",
           text: "How effectively do Lean Startup practices help founders utilize government funding for validating customer needs before large-scale investment?",
           type: "likert_4",
           options: ["A) Not effective at all", "B) Slightly effective", "C) Moderately effective", "D) Highly effective"],
@@ -309,9 +316,9 @@ export const governmentQuestionnaire: QuestionnaireConfig = {
           required: true,
         },
         {
-          id: "gov_h2_q7",
-          sectionId: "sec_b_h2",
-          number: "Q7",
+          id: "gov_h3_q2",
+          sectionId: "sec_b_h3",
+          number: "Q2",
           text: "Compared with traditional approaches, how efficiently does the Lean Startup approach help founders achieve the milestones required by government-funded programmes?",
           type: "likert_4",
           options: ["A) Much less efficiently", "B) Less efficiently", "C) More efficiently", "D) Much more efficiently"],
@@ -319,9 +326,9 @@ export const governmentQuestionnaire: QuestionnaireConfig = {
           required: true,
         },
         {
-          id: "gov_h2_q8",
-          sectionId: "sec_b_h2",
-          number: "Q8",
+          id: "gov_h3_q3",
+          sectionId: "sec_b_h3",
+          number: "Q3",
           text: "To what extent does the Lean Startup approach reduce unnecessary expenditure when using government grants or financial assistance?",
           type: "likert_4",
           options: ["A) Not at all", "B) To a small extent", "C) To a moderate extent", "D) To a great extent"],
@@ -329,9 +336,9 @@ export const governmentQuestionnaire: QuestionnaireConfig = {
           required: true,
         },
         {
-          id: "gov_h2_q9",
-          sectionId: "sec_b_h2",
-          number: "Q9",
+          id: "gov_h3_q4",
+          sectionId: "sec_b_h3",
+          number: "Q4",
           text: "How helpful are Lean Startup practices in enabling founders to quickly respond to changes in government policies, funding guidelines, or compliance requirements?",
           type: "likert_4",
           options: ["A) Not helpful", "B) Slightly helpful", "C) Moderately helpful", "D) Highly helpful"],
@@ -339,9 +346,9 @@ export const governmentQuestionnaire: QuestionnaireConfig = {
           required: true,
         },
         {
-          id: "gov_h2_q10",
-          sectionId: "sec_b_h2",
-          number: "Q10",
+          id: "gov_h3_q5",
+          sectionId: "sec_b_h3",
+          number: "Q5",
           text: "How much has the Lean Startup approach improved your startup's ability to maximize the benefits of government support programmes?",
           type: "likert_4",
           options: ["A) Not at all", "B) To a limited extent", "C) To a considerable extent", "D) To a very great extent"],
