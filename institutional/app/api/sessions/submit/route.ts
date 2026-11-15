@@ -11,7 +11,7 @@ export async function POST(req: NextRequest) {
 
     const session = sheetsStorage.getSession(sessionId);
     if (session && session.status === 'SUBMITTED') {
-      return NextResponse.json({ success: true, submittedAt: session.submittedAt });
+      return NextResponse.json({ success: true, submittedAt: session.submittedAt, session });
     }
 
     const submittedAt = new Date().toISOString();
@@ -23,12 +23,17 @@ export async function POST(req: NextRequest) {
     const allResponses = finalResponses || (session ? sheetsStorage.getResponsesForSession(sessionId) : {});
 
     // 1. Google Apps Script Web App Webhook (Simplest & Direct)
-    const webappUrl = process.env.GOOGLE_SHEET_WEBAPP_URL;
+    const webappUrl =
+      process.env.GOOGLE_SHEET_WEBAPP_URL ||
+      process.env.GOOGLE_APPS_SCRIPT_URL ||
+      process.env.GOOGLE_SHEET_WEBHOOK_URL;
+
     if (webappUrl) {
       try {
         await fetch(webappUrl, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
+          redirect: 'follow',
           body: JSON.stringify({
             event: 'SUBMIT_FORM',
             sessionId,
@@ -53,7 +58,19 @@ export async function POST(req: NextRequest) {
       await sheetsStorage.logEvent(spreadsheetId, sessionId, 'SUBMISSION_CONFIRMED', 'SUCCESS');
     }
 
-    return NextResponse.json({ success: true, submittedAt });
+    const updatedSession = session
+      ? { ...session, status: 'SUBMITTED' as const, submittedAt }
+      : {
+          sessionId,
+          questionnaireId,
+          status: 'SUBMITTED' as const,
+          submittedAt,
+          startedAt: submittedAt,
+          lastUpdatedAt: submittedAt,
+          responses: allResponses,
+        };
+
+    return NextResponse.json({ success: true, submittedAt, session: updatedSession });
   } catch (e: any) {
     console.error('Submission error:', e);
     return NextResponse.json({ error: 'Failed to record submission' }, { status: 500 });

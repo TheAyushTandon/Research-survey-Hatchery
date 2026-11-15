@@ -261,8 +261,13 @@ export function QuestionnaireRunner({
       });
 
       const data = await res.json();
-      if (res.ok && data.session) {
-        setSession(data.session);
+      if (res.ok && (data.success || data.session)) {
+        const finalSession = data.session || {
+          ...session,
+          status: 'SUBMITTED',
+          submittedAt: data.submittedAt || new Date().toISOString(),
+        };
+        setSession(finalSession);
         setAutosaveStatus('saved');
         setScreen('COMPLETED');
       } else {
