@@ -56,10 +56,16 @@ export function verifyInvitationToken(
       return { valid: false, error: 'Invitation token has expired' };
     }
     if (expectedQuestionnaireId && payload.questionnaireId !== expectedQuestionnaireId) {
-      return {
-        valid: false,
-        error: `Invitation is valid for '${payload.questionnaireId}', but this endpoint requires '${expectedQuestionnaireId}'.`,
-      };
+      const isInstitutionalMatch =
+        expectedQuestionnaireId === 'institutional' &&
+        (payload.questionnaireId === 'institutional-staff' || payload.questionnaireId === 'institutional-faculty');
+
+      if (!isInstitutionalMatch) {
+        return {
+          valid: false,
+          error: `Invitation is valid for '${payload.questionnaireId}', but this endpoint requires '${expectedQuestionnaireId}'.`,
+        };
+      }
     }
     return { valid: true, payload };
   } catch (e) {

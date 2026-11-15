@@ -34,6 +34,12 @@ async function runTests() {
   assert(govTotal === 42, `Government questionnaire has exactly 42 questions (got ${govTotal})`);
   assert(staffTotal === 10, `Institutional Staff questionnaire has exactly 10 questions (got ${staffTotal})`);
   assert(facultyTotal === 10, `Institutional Faculty questionnaire has exactly 10 questions (got ${facultyTotal})`);
+  
+  // Verify unified institutional questionnaire
+  const instConfigTs = fs.readFileSync('institutional/config/questionnaire.ts', 'utf8');
+  assert(instConfigTs.includes('Questionnaire for Incubator Managers and Operational Staff / Faculty Members'), 'Unified Institutional questionnaire title is verified');
+  const instMatch = instConfigTs.match(/"id": "(staff|faculty)_q/g);
+  assert(instMatch && instMatch.length === 20, `Unified Institutional questionnaire has exactly 20 questions (got ${instMatch ? instMatch.length : 0})`);
 
   // Verify revised content in founders
   const fQ2 = foundersConfig[0].questions.find(q => q.num === 'Q2');
