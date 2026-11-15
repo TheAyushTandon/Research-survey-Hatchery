@@ -13,10 +13,6 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: tokenCheck.error || 'Unauthorized' }, { status: 401 });
     }
 
-    if (!respondent || !respondent.fullName || !respondent.email) {
-      return NextResponse.json({ error: 'Incomplete respondent details' }, { status: 400 });
-    }
-
     const sessionId = uuidv4();
     const respondentId = uuidv4();
     const resumeToken = uuidv4().replace(/-/g, '').slice(0, 12);
@@ -33,13 +29,13 @@ export async function POST(req: NextRequest) {
       startedAt: now,
       lastUpdatedAt: now,
       resumeToken,
-      respondent,
+      respondent: respondent || { isAnonymous: true, consentGiven: true, consentTimestamp: now },
       responses: {},
     };
 
     const spreadsheetId = getSpreadsheetId(questionnaireId);
     await sheetsStorage.upsertSession(spreadsheetId, sessionData);
-    await sheetsStorage.saveRespondent(spreadsheetId, respondent, sessionId);
+    await sheetsStorage.saveRespondent(spreadsheetId, sessionData.respondent, sessionId);
     await sheetsStorage.logEvent(spreadsheetId, sessionId, 'SESSION_CREATED', 'SUCCESS');
 
     return NextResponse.json({ session: sessionData });

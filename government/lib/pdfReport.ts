@@ -29,7 +29,7 @@ export function generatePdfReport(
 
   doc.setFont('helvetica', 'normal');
   doc.setFontSize(8.5);
-  doc.text('Official Verified Response Report · Research Record', 14, 18);
+  doc.text('Official Verified Response Report · Anonymous Academic Record', 14, 18);
 
   // 2. Study Title & Subtitle
   doc.setTextColor(darkTextColor[0], darkTextColor[1], darkTextColor[2]);
@@ -46,27 +46,25 @@ export function generatePdfReport(
   doc.text(`Stakeholder Stream: ${config.targetGroup}`, 14, currentY);
   currentY += 7;
 
-  // 3. Respondent & Session Card
+  // 3. Verification Card
   doc.setDrawColor(grayBorder[0], grayBorder[1], grayBorder[2]);
   doc.setFillColor(252, 252, 252);
-  doc.roundedRect(14, currentY, 182, 30, 2, 2, 'FD');
+  doc.roundedRect(14, currentY, 182, 24, 2, 2, 'FD');
 
   doc.setFont('helvetica', 'bold');
   doc.setFontSize(8.5);
   doc.setTextColor(darkTextColor[0], darkTextColor[1], darkTextColor[2]);
-  doc.text('PARTICIPANT PROFILE & VERIFICATION', 18, currentY + 6.5);
+  doc.text('VERIFIED ANONYMOUS SUBMISSION', 18, currentY + 6.5);
 
   doc.setFont('helvetica', 'normal');
   doc.setFontSize(8);
-  doc.text(`Full Name: ${respondent.fullName || 'N/A'}`, 18, currentY + 13);
-  doc.text(`Designation: ${respondent.designation || 'N/A'}`, 18, currentY + 18.5);
-  doc.text(`Email: ${respondent.email || 'N/A'}`, 18, currentY + 24);
+  doc.text(`Participant: Anonymous Academic Respondent`, 18, currentY + 13);
+  doc.text(`Consent Verified: Yes (Confidential Research Protocol)`, 18, currentY + 18.5);
 
   doc.text(`Session ID: ${sessionId}`, 108, currentY + 13);
   doc.text(`Submitted On: ${new Date(submissionDate).toLocaleString()}`, 108, currentY + 18.5);
-  doc.text(`Status: Verified Academic Submission`, 108, currentY + 24);
 
-  currentY += 36;
+  currentY += 30;
 
   // 4. Calculate stats
   let totalEligibleQuestions = 0;

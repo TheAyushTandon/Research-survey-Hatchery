@@ -52,12 +52,13 @@ export interface QuestionnaireConfig {
 }
 
 export interface RespondentInfo {
-  fullName: string;
-  designation: string;
-  email: string;
-  phone: string;
+  isAnonymous?: boolean;
   consentGiven: boolean;
   consentTimestamp: string;
+  fullName?: string;
+  designation?: string;
+  email?: string;
+  phone?: string;
 }
 
 export interface ResponseValue {

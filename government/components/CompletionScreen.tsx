@@ -6,7 +6,7 @@ import { CheckCircle2, Download, Copy, Check } from 'lucide-react';
 interface CompletionScreenProps {
   sessionId: string;
   submissionTimestamp: string;
-  respondentName: string;
+  respondentName?: string;
   onDownloadPdf: () => void;
   isGeneratingPdf?: boolean;
 }
@@ -14,7 +14,6 @@ interface CompletionScreenProps {
 export function CompletionScreen({
   sessionId,
   submissionTimestamp,
-  respondentName,
   onDownloadPdf,
   isGeneratingPdf = false,
 }: CompletionScreenProps) {
@@ -36,13 +35,13 @@ export function CompletionScreen({
         Submission Confirmed
       </h2>
       <p className="text-sm sm:text-base text-gray-600 font-ubuntu mb-8 leading-relaxed max-w-md mx-auto">
-        Thank you, <span className="font-semibold text-gray-900">{respondentName}</span>. Your responses have been securely verified and saved to the academic research archive.
+        Thank you for your valuable contribution. Your responses have been anonymously and securely recorded in the academic research database.
       </p>
 
       <div className="bg-white rounded-2xl border border-gray-100 p-6 text-left shadow-xs mb-8 space-y-4">
         <div>
           <span className="text-[11px] font-bold uppercase tracking-wider text-gray-400 font-ubuntu">
-            Official Research Session ID
+            Anonymous Research Session Reference
           </span>
           <div className="mt-1 flex items-center justify-between bg-gray-50 border border-gray-200/60 rounded-xl px-3.5 py-2.5">
             <span className="font-mono text-xs sm:text-sm text-gray-800 break-all select-all">
@@ -52,7 +51,7 @@ export function CompletionScreen({
               onClick={handleCopy}
               type="button"
               className="ml-2 inline-flex items-center text-xs font-medium text-horizon-600 hover:text-horizon-700 bg-white border border-gray-200 px-2.5 py-1.5 rounded-md transition shadow-2xs cursor-pointer"
-              title="Copy Session ID"
+              title="Copy Reference ID"
             >
               {copied ? (
                 <>
@@ -89,7 +88,7 @@ export function CompletionScreen({
         </button>
 
         <p className="text-xs text-gray-400 font-ubuntu">
-          A copy of your complete questionnaire response report will be saved to your device in PDF format.
+          You may download a verified PDF copy of your submitted answers for your records.
         </p>
       </div>
     </div>
