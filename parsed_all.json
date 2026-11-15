@@ -1,0 +1,1386 @@
+{
+  "founders": [
+    {
+      "title": "Section A: General Information",
+      "questions": [
+        {
+          "num": "Q1.",
+          "text": "What is your gender?",
+          "options": [
+            "Male",
+            "Female",
+            "Non-binary/Third Gender",
+            "Prefer not to say"
+          ]
+        },
+        {
+          "num": "Q2.",
+          "text": "What is your age group?",
+          "options": [
+            "Below 25 years",
+            "25-34 years",
+            "35-44 years",
+            "45 years and above"
+          ]
+        },
+        {
+          "num": "Q3.",
+          "text": "What is your highest educational qualification?",
+          "options": [
+            "Diploma",
+            "Bachelor's Degree",
+            "Master's Degree",
+            "Doctoral Degree (Ph.D.)",
+            "Professional Qualification",
+            "Other __________"
+          ]
+        },
+        {
+          "num": "Q4.",
+          "text": "What is your role in the startup?",
+          "options": [
+            "Founder",
+            "Co-founder",
+            "CEO",
+            "Director",
+            "Managing Partner",
+            "Technical Founder",
+            "Other __________"
+          ]
+        },
+        {
+          "num": "Q5.",
+          "text": "How long has your startup been operating?",
+          "options": [
+            "Less than 1 year",
+            "1-3 years",
+            "4-6 years",
+            "7-10 years",
+            "More than 10 years"
+          ]
+        },
+        {
+          "num": "Q6.",
+          "text": "Which stage best describes your startup?",
+          "options": [
+            "Idea Stage",
+            "Prototype Development",
+            "Validation/Pilot Testing",
+            "Early Revenue Stage",
+            "Growth Stage",
+            "Scaling Stage"
+          ]
+        },
+        {
+          "num": "Q7.",
+          "text": "Which sector does your startup primarily operate in?",
+          "options": [
+            "Biotechnology",
+            "Healthcare",
+            "Agriculture/AgriTech",
+            "Artificial Intelligence",
+            "Information Technology",
+            "EdTech",
+            "FinTech",
+            "Clean Energy",
+            "Manufacturing",
+            "Food Processing",
+            "Electronics/IoT",
+            "Social Enterprise",
+            "Other __________"
+          ]
+        },
+        {
+          "num": "Q8.",
+          "text": "Is your startup currently incubated?",
+          "options": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "num": "Q9.",
+          "text": "If yes, what type of incubator supports your startup?",
+          "options": [
+            "University/Academic Incubator",
+            "Government-supported Incubator",
+            "Private Incubator",
+            "Corporate Incubator",
+            "Accelerator Programme",
+            "Technology Business Incubator (TBI)",
+            "Biotechnology Incubator",
+            "Other __________"
+          ]
+        },
+        {
+          "num": "Q10.",
+          "text": "How long have you been associated with the incubator?",
+          "options": [
+            "Less than 6 months",
+            "6-12 months",
+            "1-2 years",
+            "2-3 years",
+            "More than 3 years"
+          ]
+        },
+        {
+          "num": "Q11.",
+          "text": "How did you first learn about the incubator?",
+          "options": [
+            "University/College",
+            "Government Programme",
+            "Startup Event",
+            "Social Media",
+            "Friends/Professional Network",
+            "Incubator Website",
+            "Faculty Mentor",
+            "Other __________"
+          ]
+        },
+        {
+          "num": "Q12.",
+          "text": "Why did you choose this incubator? (Select all that apply)",
+          "options": [
+            "Funding opportunities",
+            "Mentorship",
+            "Infrastructure",
+            "Laboratory facilities",
+            "Business networking",
+            "Investor access",
+            "Technology support",
+            "Government recognition",
+            "Market access",
+            "Intellectual Property support",
+            "Training programmes",
+            "Reputation of the incubator",
+            "Other __________"
+          ]
+        },
+        {
+          "num": "Q13.",
+          "text": "Which services have you received from the incubator? (Select all that apply)",
+          "options": [
+            "Office space",
+            "Laboratory facilities",
+            "Prototype development support",
+            "Business mentoring",
+            "Technical mentoring",
+            "Legal support",
+            "Patent/IP assistance",
+            "Funding assistance",
+            "Investor connections",
+            "Marketing support",
+            "Export guidance",
+            "Regulatory support",
+            "Networking events",
+            "Entrepreneurship training",
+            "International exposure",
+            "Other __________"
+          ]
+        },
+        {
+          "num": "Q14.",
+          "text": "Which source provided your initial funding?",
+          "options": [
+            "Self-funded (Bootstrapping)",
+            "Family/Friends",
+            "Government Grant",
+            "Incubator Seed Fund",
+            "Angel Investor",
+            "Venture Capital",
+            "Bank Loan",
+            "CSR Funding",
+            "Crowdfunding",
+            "Other __________"
+          ]
+        },
+        {
+          "num": "Q15.",
+          "text": "What is the current size of your startup?",
+          "options": [
+            "1-5 employees",
+            "6-10 employees",
+            "11-25 employees",
+            "26-50 employees",
+            "More than 50 employees"
+          ]
+        },
+        {
+          "num": "Q16.",
+          "text": "Has your startup received Intellectual Property (IP) support?",
+          "options": [
+            "Patent Filing",
+            "Trademark Registration",
+            "Copyright Registration",
+            "Design Registration",
+            "Technology Licensing",
+            "No IP Support Received"
+          ]
+        },
+        {
+          "num": "Q17.",
+          "text": "Which of the following best describes your primary customer?",
+          "options": [
+            "Individual Consumers (B2C)",
+            "Businesses (B2B)",
+            "Government",
+            "Educational Institutions",
+            "Healthcare Organizations",
+            "Export Market",
+            "Mixed Customer Base"
+          ]
+        },
+        {
+          "num": "Q18.",
+          "text": "How often do you interact with your incubator mentors?",
+          "options": [
+            "Weekly",
+            "Twice a month",
+            "Monthly",
+            "Quarterly",
+            "Rarely"
+          ]
+        },
+        {
+          "num": "Q19.",
+          "text": "What is the biggest challenge faced by your startup? (Select up to three)",
+          "options": [
+            "Funding",
+            "Product Development",
+            "Customer Acquisition",
+            "Market Validation",
+            "Regulatory Approval",
+            "Skilled Workforce",
+            "Technology Development",
+            "Manufacturing",
+            "Intellectual Property",
+            "Scaling Operations",
+            "Competition",
+            "Export Readiness",
+            "Other __________"
+          ]
+        },
+        {
+          "num": "Q20.",
+          "text": "What outcomes has your startup achieved through incubation? (Select all that apply)",
+          "options": [
+            "Product Prototype Developed",
+            "Commercial Product Launched",
+            "Revenue Generation",
+            "Patent Filed",
+            "Patent Granted",
+            "Investment Raised",
+            "Employment Created",
+            "Strategic Partnerships",
+            "Export Initiated",
+            "Research Collaboration",
+            "Technology Commercialized",
+            "Business Expansion",
+            "None of the Above"
+          ]
+        },
+        {
+          "num": "Q21.",
+          "text": "What type of collaboration has most benefited your startup?",
+          "options": [
+            "University Researchers",
+            "Industry Experts",
+            "Government Agencies",
+            "Investors",
+            "Customers",
+            "Other Startups",
+            "International Partners"
+          ]
+        },
+        {
+          "num": "Q22.",
+          "text": "What is your future business goal?",
+          "options": [
+            "Product Commercialization",
+            "Market Expansion",
+            "International Expansion",
+            "Investment Raising",
+            "Technology Licensing",
+            "Strategic Acquisition",
+            "Sustainable Growth",
+            "IPO",
+            "Other __________"
+          ]
+        },
+        {
+          "num": "Q23.",
+          "text": "Would you recommend your incubator to other entrepreneurs?",
+          "options": [
+            "Definitely Yes",
+            "Probably Yes",
+            "Not Sure",
+            "Probably No",
+            "Definitely No"
+          ]
+        },
+        {
+          "num": "Q24.",
+          "text": "How satisfied are you with your incubation experience?",
+          "options": [
+            "Very Satisfied",
+            "Satisfied",
+            "Neutral",
+            "Dissatisfied",
+            "Very Dissatisfied"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Section B: Study Hypothesis",
+      "questions": []
+    },
+    {
+      "title": "H1: Academic business incubators provide mentorship based on 'Lean Start-up Theory,' which increases the market survival rate of the incubated start-ups.",
+      "questions": [
+        {
+          "num": "Q 1:",
+          "text": "Mentors at our incubator heavily teach \"Lean Start-up\" ideas, like testing early products and learning from customer feedback.",
+          "options": [
+            "A) Rarely or never",
+            "B) Occasionally",
+            "C) Frequently",
+            "D) Always"
+          ]
+        },
+        {
+          "num": "Q 2:",
+          "text": "Using Lean strategies like knowing when to change direction (pivot) helps our start-ups stay in business longer.",
+          "options": [
+            "A) Strongly Disagree",
+            "B) Disagree",
+            "C) Agree",
+            "D) Strongly Agree"
+          ]
+        },
+        {
+          "num": "Q 3:",
+          "text": "Start-ups that follow the Lean advice given by their mentors handle market challenges and changes much better.",
+          "options": [
+            "A) Not at all effectively",
+            "B) Slightly effectively",
+            "C) Moderately effectively",
+            "D) Extremely effectively"
+          ]
+        },
+        {
+          "num": "Q 4:",
+          "text": "Regular mentor advice focused on customer feedback helps start-ups build products that people actually want to buy.",
+          "options": [
+            "A) Not at all",
+            "B) To a small extent",
+            "C) To a moderate extent",
+            "D) To a great extent"
+          ]
+        },
+        {
+          "num": "Q5:",
+          "text": "Start-ups using Lean methods fail much less often compared to those using old-fashioned, traditional business planning.",
+          "options": [
+            "A) Much higher failure rate",
+            "B) Same failure rate",
+            "C) Lower failure rate",
+            "D) Much lower failure rate"
+          ]
+        },
+        {
+          "num": "Q6.",
+          "text": "How often do mentors encourage your startup to validate business ideas with potential customers before making major investments?",
+          "options": [
+            "A) Never",
+            "B) Occasionally",
+            "C) Frequently",
+            "D) Always"
+          ]
+        },
+        {
+          "num": "Q7.",
+          "text": "To what extent has mentorship on developing a Minimum Viable Product (MVP) helped your startup reduce the risk of product failure?",
+          "options": [
+            "A) Not at all",
+            "B) To a small extent",
+            "C) To a moderate extent",
+            "D) To a great extent"
+          ]
+        },
+        {
+          "num": "Q8.",
+          "text": "How effective has mentor guidance been in helping your startup quickly adapt its business model based on market feedback?",
+          "options": [
+            "A) Not effective",
+            "B) Slightly effective",
+            "C) Moderately effective",
+            "D) Highly effective"
+          ]
+        },
+        {
+          "num": "Q9.",
+          "text": "Which best describes the impact of Lean Startup mentoring on your startup's ability to make informed business decisions?",
+          "options": [
+            "A) No noticeable impact",
+            "B) Limited impact",
+            "C) Moderate impact",
+            "D) Significant impact"
+          ]
+        },
+        {
+          "num": "Q10.",
+          "text": "How much has Lean Startup-oriented mentorship contributed to the long-term sustainability of your startup?",
+          "options": [
+            "A) Not at all",
+            "B) To a limited extent",
+            "C) To a considerable extent",
+            "D) To a very great extent"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "H2: The funders who adopt lean methodologies utilize government support and backing more efficiently than those funders who use traditional methods.",
+      "questions": [
+        {
+          "num": "Q1:",
+          "text": "Founders who use Lean methods are better at making the most of government grants and money without wasting it.",
+          "options": [
+            "A) Strongly Disagree",
+            "B) Disagree",
+            "C) Agree",
+            "D) Strongly Agree"
+          ]
+        },
+        {
+          "num": "Q2:",
+          "text": "Traditional planners often waste or misuse government support because their spending plans are too strict and rigid.",
+          "options": [
+            "A) Strongly Disagree",
+            "B) Disagree",
+            "C) Agree",
+            "D) Strongly Agree"
+          ]
+        },
+        {
+          "num": "Q3:",
+          "text": "Lean founders use government-backed perks (like tax breaks or funds) for product testing much faster than traditional founders.",
+          "options": [
+            "A) Much Slower",
+            "B) Slower",
+            "C) Faster",
+            "D) Much Faster"
+          ]
+        },
+        {
+          "num": "Q4:",
+          "text": "The flexible nature of Lean methods makes it easier for founders to meet government rules and milestone requirements.",
+          "options": [
+            "A) Very Difficult",
+            "B) Difficult",
+            "C) Easy",
+            "D) Very Easy"
+          ]
+        },
+        {
+          "num": "Q5:",
+          "text": "Founders who use Lean principles get a better return on investment from government support programs than those using traditional business methods.",
+          "options": [
+            "A) Much Worse",
+            "B) Worse",
+            "C) Better",
+            "D) Much Better"
+          ]
+        },
+        {
+          "num": "Q6.",
+          "text": "How effectively do Lean Startup practices help founders utilize government funding for validating customer needs before large-scale investment?",
+          "options": [
+            "A) Not effective at all",
+            "B) Slightly effective",
+            "C) Moderately effective",
+            "D) Highly effective"
+          ]
+        },
+        {
+          "num": "Q7.",
+          "text": "Compared with traditional approaches, how efficiently does the Lean Startup approach help founders achieve the milestones required by government-funded programmes?",
+          "options": [
+            "A) Much less efficiently",
+            "B) Less efficiently",
+            "C) More efficiently",
+            "D) Much more efficiently"
+          ]
+        },
+        {
+          "num": "Q8.",
+          "text": "To what extent does the Lean Startup approach reduce unnecessary expenditure when using government grants or financial assistance?",
+          "options": [
+            "A) Not at all",
+            "B) To a small extent",
+            "C) To a moderate extent",
+            "D) To a great extent"
+          ]
+        },
+        {
+          "num": "Q9.",
+          "text": "How helpful are Lean Startup practices in enabling founders to quickly respond to changes in government policies, funding guidelines, or compliance requirements?",
+          "options": [
+            "A) Not helpful",
+            "B) Slightly helpful",
+            "C) Moderately helpful",
+            "D) Highly helpful"
+          ]
+        },
+        {
+          "num": "Q10.",
+          "text": "How much has the Lean Startup approach improved your startup's ability to maximize the benefits of government support programmes?",
+          "options": [
+            "A) Not at all",
+            "B) To a limited extent",
+            "C) To a considerable extent",
+            "D) To a very great extent"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Section C: Triple Helix-Based Institutional Collaboration",
+      "questions": [
+        {
+          "num": "Q1.",
+          "text": "Does the incubator facilitate interactions between university researchers and a start-up?",
+          "options": [
+            "A) Strongly Disagree",
+            "B) Disagree",
+            "C) Agree",
+            "D) Strongly Agree"
+          ]
+        },
+        {
+          "num": "Q2.",
+          "text": "Does the incubator offer university research, technical expertise, and lab facilities?",
+          "options": [
+            "A) Strongly Disagree",
+            "B) Disagree",
+            "C) Agree",
+            "D) Strongly Agree"
+          ]
+        },
+        {
+          "num": "Q3.",
+          "text": "Does the incubator offer good access to the industry partners and markets?",
+          "options": [
+            "A) Strongly Disagree",
+            "B) Disagree",
+            "C) Agree",
+            "D) Strongly Agree"
+          ]
+        },
+        {
+          "num": "Q4.",
+          "text": "Do corporate mentors provide valuable insight into the market entry and commercialization process?",
+          "options": [
+            "A) Strongly Disagree",
+            "B) Disagree",
+            "C) Agree",
+            "D) Strongly Agree"
+          ]
+        },
+        {
+          "num": "Q5.",
+          "text": "Does the incubator facilitate connections to relevant government programs and grants?",
+          "options": [
+            "A) Strongly Disagree",
+            "B) Disagree",
+            "C) Agree",
+            "D) Strongly Agree"
+          ]
+        },
+        {
+          "num": "Q6.",
+          "text": "Does incubator support help your start-up comply with policy and legal regulations?",
+          "options": [
+            "A) Strongly Disagree",
+            "B) Disagree",
+            "C) Agree",
+            "D) Strongly Agree"
+          ]
+        },
+        {
+          "num": "Q7.",
+          "text": "Do government programs in the incubator help you build relationships with researchers and industry partners?",
+          "options": [
+            "A) Strongly Disagree",
+            "B) Disagree",
+            "C) Agree",
+            "D) Strongly Agree"
+          ]
+        },
+        {
+          "num": "Q8.",
+          "text": "Does the incubator effectively bridge university, industry, and government resources, thus accelerating start up development?",
+          "options": [
+            "A) Strongly Disagree",
+            "B) Disagree",
+            "C) Agree",
+            "D) Strongly Agree"
+          ]
+        },
+        {
+          "num": "Q9.",
+          "text": "Do collaborative projects help shorten product development cycles?",
+          "options": [
+            "A) Strongly Disagree",
+            "B) Disagree",
+            "C) Agree",
+            "D) Strongly Agree"
+          ]
+        },
+        {
+          "num": "Q10.",
+          "text": "Does the cooperation between university, industry, and government contribute to start up’s capacity building?",
+          "options": [
+            "A) Strongly Disagree",
+            "B) Disagree",
+            "C) Agree",
+            "D) Strongly Agree"
+          ]
+        }
+      ]
+    }
+  ],
+  "government": [
+    {
+      "title": "Section A: General Information",
+      "questions": [
+        {
+          "num": "Q1.",
+          "text": "Which type of government organization do you represent?",
+          "options": [
+            "Central Government Ministry/Department",
+            "State Government Department",
+            "Autonomous Government Organization",
+            "Government Funding Agency",
+            "Public Sector Undertaking (PSU)",
+            "Science & Technology Council",
+            "Startup Promotion Agency",
+            "Innovation Mission",
+            "Other (Please specify): __________"
+          ]
+        },
+        {
+          "num": "Q2.",
+          "text": "What is your current designation?",
+          "options": [
+            "Secretary/Additional Secretary",
+            "Director/Deputy Director",
+            "Joint Director",
+            "Programme Manager",
+            "Scientific Officer",
+            "Project Officer",
+            "Consultant/Advisor",
+            "Other: __________"
+          ]
+        },
+        {
+          "num": "Q3.",
+          "text": "How many years have you been associated with innovation, entrepreneurship, or incubation programmes?",
+          "options": [
+            "Less than 3 years",
+            "3–5 years",
+            "6–10 years",
+            "11–15 years",
+            "More than 15 years"
+          ]
+        },
+        {
+          "num": "Q4.",
+          "text": "Which sector does your organization primarily support? (Multiple selections allowed)",
+          "options": [
+            "Biotechnology",
+            "Healthcare",
+            "Agriculture",
+            "Information Technology",
+            "Artificial Intelligence",
+            "Electronics",
+            "Manufacturing",
+            "Renewable Energy",
+            "Food Processing",
+            "Education",
+            "Multi-sector",
+            "Other __________"
+          ]
+        },
+        {
+          "num": "Q5.",
+          "text": "Which activities does your organization undertake related to Academic Business Incubators? (Select all that apply)",
+          "options": [
+            "Policy formulation",
+            "Funding support",
+            "Infrastructure development",
+            "Startup mentoring",
+            "Capacity building",
+            "Monitoring & Evaluation",
+            "Technology commercialization",
+            "Intellectual Property support",
+            "Industry networking",
+            "International collaboration",
+            "Other __________"
+          ]
+        },
+        {
+          "num": "Q6.",
+          "text": "How frequently does your organization interact with Academic Business Incubators?",
+          "options": [
+            "Weekly",
+            "Monthly",
+            "Quarterly",
+            "Half-yearly",
+            "Annually",
+            "Rarely"
+          ]
+        },
+        {
+          "num": "Q7.",
+          "text": "Approximately how many Academic Business Incubators does your organization currently support?",
+          "options": [
+            "1–5",
+            "6–10",
+            "11–20",
+            "More than 20",
+            "Not sure"
+          ]
+        },
+        {
+          "num": "Q8.",
+          "text": "Which forms of support are provided by your organization? (Select all that apply)",
+          "options": [
+            "Financial grants",
+            "Seed funding",
+            "Infrastructure",
+            "Policy support",
+            "Networking opportunities",
+            "Capacity-building programmes",
+            "Market access",
+            "Technology transfer",
+            "Patent/IP support",
+            "International exposure",
+            "Other __________"
+          ]
+        },
+        {
+          "num": "Q9.",
+          "text": "Which stage of startup development receives the highest support from your organization?",
+          "options": [
+            "Idea stage",
+            "Prototype development",
+            "Validation",
+            "Early commercialization",
+            "Growth stage",
+            "Scale-up",
+            "All stages equally"
+          ]
+        },
+        {
+          "num": "Q10.",
+          "text": "Which performance indicators are primarily used to evaluate Academic Business Incubators? (Select all that apply)",
+          "options": [
+            "Number of startups incubated",
+            "Startup survival rate",
+            "Revenue generated",
+            "Employment created",
+            "Patents/IP generated",
+            "Technologies commercialized",
+            "Investment attracted",
+            "Research collaborations",
+            "Social impact",
+            "Graduation rate",
+            "Other __________"
+          ]
+        },
+        {
+          "num": "Q11.",
+          "text": "Which government schemes/programmes is your organization associated with? (Select all that apply)",
+          "options": [
+            "Startup India",
+            "BIRAC",
+            "DST",
+            "DBT",
+            "MSME Incubation Scheme",
+            "AIM (Atal Innovation Mission)",
+            "MeitY Startup Hub",
+            "State Startup Mission",
+            "Other __________"
+          ]
+        },
+        {
+          "num": "Q12.",
+          "text": "In your opinion, what is the primary objective of Academic Business Incubators?",
+          "options": [
+            "Commercialization of research",
+            "Startup creation",
+            "Technology transfer",
+            "Employment generation",
+            "Regional innovation development",
+            "Industry collaboration",
+            "Entrepreneurial education",
+            "All of the above"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Section B: Hypothesis based Questionnaire",
+      "questions": []
+    },
+    {
+      "title": "H1: Active financial and regulatory support from the government enhances the quality of infrastructure and funding opportunities provided by academic business incubators.",
+      "questions": [
+        {
+          "num": "Q1:",
+          "text": "Government financial help has made the facilities and technology much better at our university incubator.",
+          "options": [
+            "A) Strongly Disagree",
+            "B) Disagree",
+            "C) Agree",
+            "D) Strongly Agree"
+          ]
+        },
+        {
+          "num": "Q2:",
+          "text": "Incubators with strong government backing offer better workspaces and labs than those without it.",
+          "options": [
+            "A) Strongly Disagree",
+            "B) Disagree",
+            "C) Agree",
+            "D) Strongly Agree"
+          ]
+        },
+        {
+          "num": "Q3:",
+          "text": "Government rules make it easier for our incubator to find and attract different types of funding.",
+          "options": [
+            "A) Strongly Disagree",
+            "B) Disagree",
+            "C) Agree",
+            "D) Strongly Agree"
+          ]
+        },
+        {
+          "num": "Q4:",
+          "text": "Government grants and funding programs have directly increased the investors and funding options available to our start-ups.",
+          "options": [
+            "A) Strongly Disagree",
+            "B) Disagree",
+            "C) Agree",
+            "D) Strongly Agree"
+          ]
+        },
+        {
+          "num": "Q5:",
+          "text": "Helpful government rules reduce paperwork and delays, letting our incubator focus more on creating funding opportunities.",
+          "options": [
+            "A) Strongly Disagree",
+            "B) Disagree",
+            "C) Agree",
+            "D) Strongly Agree"
+          ]
+        },
+        {
+          "num": "Q6.",
+          "text": "Government funding has enabled our incubator to acquire modern equipment, laboratories, and digital infrastructure required to support innovative start-ups.",
+          "options": [
+            "A) Strongly Disagree",
+            "B) Disagree",
+            "C) Agree",
+            "D) Strongly Agree"
+          ]
+        },
+        {
+          "num": "Q7.",
+          "text": "Government-supported infrastructure has improved startups' access to technical facilities, shared workspaces, and specialized research resources.",
+          "options": [
+            "A) Strongly Disagree",
+            "B) Disagree",
+            "C) Agree",
+            "D) Strongly Agree"
+          ]
+        },
+        {
+          "num": "Q8.",
+          "text": "Government financial support has increased the incubator's ability to provide seed funding, prototype development grants, and other financial assistance to start-ups.",
+          "options": [
+            "A) Strongly Disagree",
+            "B) Disagree",
+            "C) Agree",
+            "D) Strongly Agree"
+          ]
+        },
+        {
+          "num": "Q9.",
+          "text": "Government policies encourage partnerships between academic incubators, industry, and financial institutions, thereby expanding funding opportunities for start-ups.",
+          "options": [
+            "A) Strongly Disagree",
+            "B) Disagree",
+            "C) Agree",
+            "D) Strongly Agree"
+          ]
+        },
+        {
+          "num": "Q10.",
+          "text": "Overall, government financial and regulatory support has significantly strengthened the long-term sustainability and effectiveness of our academic business incubator.",
+          "options": [
+            "A) Strongly Disagree",
+            "B) Disagree",
+            "C) Agree",
+            "D) Strongly Agree"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "H2: Strong collaboration among the government, industry, and academia reduces the time required for funders to plan and execute their business models.",
+      "questions": [
+        {
+          "num": "Q1:",
+          "text": "When the government, companies, and universities work together, it helps new founders plan their businesses much faster.",
+          "options": [
+            "A) Strongly Disagree",
+            "B) Disagree",
+            "C) Agree",
+            "D) Strongly Agree"
+          ]
+        },
+        {
+          "num": "Q2:",
+          "text": "Having access to joint programs helps founders avoid government red tape and delays while building their business.",
+          "options": [
+            "A) Strongly Disagree",
+            "B) Disagree",
+            "C) Agree",
+            "D) Strongly Agree"
+          ]
+        },
+        {
+          "num": "Q3:",
+          "text": "Strong teamwork between these three groups shortens the time it takes for a founder to launch their business.",
+          "options": [
+            "A) Strongly Disagree",
+            "B) Disagree",
+            "C) Agree",
+            "D) Strongly Agree"
+          ]
+        },
+        {
+          "num": "Q4:",
+          "text": "Advice from industry experts through the incubator helps founders test and run their business models quicker.",
+          "options": [
+            "A) Strongly Disagree",
+            "B) Disagree",
+            "C) Agree",
+            "D) Strongly Agree"
+          ]
+        },
+        {
+          "num": "Q5:",
+          "text": "Getting support and guidance from policymakers, business experts, and teachers all at once cuts down on costly mistakes and delays.",
+          "options": [
+            "A) Strongly Disagree",
+            "B) Disagree",
+            "C) Agree",
+            "D) Strongly Agree"
+          ]
+        },
+        {
+          "num": "Q6:",
+          "text": "How effectively do Lean Startup practices help founders utilize government funding for validating customer needs before large-scale investment?",
+          "options": [
+            "A) Not effective at all",
+            "B) Slightly effective",
+            "C) Moderately effective",
+            "D) Highly effective"
+          ]
+        },
+        {
+          "num": "Q7:",
+          "text": "Compared with traditional approaches, how efficiently does the Lean Startup approach help founders achieve the milestones required by government-funded programmes?",
+          "options": [
+            "A) Much less efficiently",
+            "B) Less efficiently",
+            "C) More efficiently",
+            "D) Much more efficiently"
+          ]
+        },
+        {
+          "num": "Q8:",
+          "text": "To what extent does the Lean Startup approach reduce unnecessary expenditure when using government grants or financial assistance?",
+          "options": [
+            "A) Not at all",
+            "B) To a small extent",
+            "C) To a moderate extent",
+            "D) To a great extent"
+          ]
+        },
+        {
+          "num": "Q9:",
+          "text": "How helpful are Lean Startup practices in enabling founders to quickly respond to changes in government policies, funding guidelines, or compliance requirements?",
+          "options": [
+            "A) Not helpful",
+            "B) Slightly helpful",
+            "C) Moderately helpful",
+            "D) Highly helpful"
+          ]
+        },
+        {
+          "num": "Q10:",
+          "text": "How much has the Lean Startup approach improved your startup's ability to maximize the benefits of government support programmes?",
+          "options": [
+            "A) Not at all",
+            "B) To a limited extent",
+            "C) To a considerable extent",
+            "D) To a very great extent"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Section C: Triple Helix-Based Collaboration",
+      "questions": [
+        {
+          "num": "Q1.",
+          "text": "Do university-industry-government interactions accelerate incubators’ development?",
+          "options": [
+            "A) Strongly Disagree",
+            "B) Disagree",
+            "C) Agree",
+            "D) Strongly Agree"
+          ]
+        },
+        {
+          "num": "Q2.",
+          "text": "Do collaborative research centers enable academic-industry partnerships to develop prototypes more effectively?",
+          "options": [
+            "A) Strongly Disagree",
+            "B) Disagree",
+            "C) Agree",
+            "D) Strongly Agree"
+          ]
+        },
+        {
+          "num": "Q3.",
+          "text": "Do you think the joint mentoring programs of university faculty members and industry professionals prevent new firms from common business pitfalls?",
+          "options": [
+            "A) Strongly Disagree",
+            "B) Disagree",
+            "C) Agree",
+            "D) Strongly Agree"
+          ]
+        },
+        {
+          "num": "Q4.",
+          "text": "Do the government policies ease the process of university researchers selling their intellectual property to industry partners?",
+          "options": [
+            "A) Strongly Disagree",
+            "B) Disagree",
+            "C) Agree",
+            "D) Strongly Agree"
+          ]
+        },
+        {
+          "num": "Q5.",
+          "text": "Does academic research commercialization align with industry market trends and shorten the time of start-up development?",
+          "options": [
+            "A) Strongly Disagree",
+            "B) Disagree",
+            "C) Agree",
+            "D) Strongly Agree"
+          ]
+        },
+        {
+          "num": "Q6.",
+          "text": "Do the Government and industry-sponsored grants ensure adequate seed capital for the incubator?",
+          "options": [
+            "A) Strongly Disagree",
+            "B) Disagree",
+            "C) Agree",
+            "D) Strongly Agree"
+          ]
+        },
+        {
+          "num": "Q7.",
+          "text": "Do you think bureaucratic hurdles between administrative executives and corporate lawyers prolong incubator initiatives?",
+          "options": [
+            "A) Strongly Disagree",
+            "B) Disagree",
+            "C) Agree",
+            "D) Strongly Agree"
+          ]
+        },
+        {
+          "num": "Q8.",
+          "text": "Do industry hackathons at the university promote viable tech start-ups?",
+          "options": [
+            "A) Strongly Disagree",
+            "B) Disagree",
+            "C) Agree",
+            "D) Strongly Agree"
+          ]
+        },
+        {
+          "num": "Q9.",
+          "text": "Do government policies encourage businesses to sponsor academic incubators?",
+          "options": [
+            "A) Strongly Disagree",
+            "B) Disagree",
+            "C) Agree",
+            "D) Strongly Agree"
+          ]
+        },
+        {
+          "num": "Q10.",
+          "text": "Do collaborative ties ensure our incubator's sustainability?",
+          "options": [
+            "A) Strongly Disagree",
+            "B) Disagree",
+            "C) Agree",
+            "D) Strongly Agree"
+          ]
+        }
+      ]
+    }
+  ],
+  "faculty": [
+    {
+      "title": "Group A: Incubator Managers and Operational Staff",
+      "questions": [
+        {
+          "num": "Q1:",
+          "text": "How systematically does your incubator train startups to implement the Build-Measure-Learn feedback loop?",
+          "options": [
+            "A) Not at all systematically",
+            "B) Slightly systematically",
+            "C) Moderately systematically",
+            "D) Very systematically",
+            "E) Extremely systematically"
+          ]
+        },
+        {
+          "num": "Q2:",
+          "text": "Do you actively facilitate formal joint venture agreements between your incubated startups and external industry partners?",
+          "options": [
+            "A) Strongly disagree",
+            "B) Disagree",
+            "C) Neutral",
+            "D) Agree",
+            "E) Strongly agree"
+          ]
+        },
+        {
+          "num": "Q3:",
+          "text": "How heavily does your operational staff rely on validated learning metrics over traditional financial metrics when evaluating early-stage startups?",
+          "options": [
+            "A) Not at all heavily",
+            "B) Slightly heavily",
+            "C) Moderately heavily",
+            "D) Very heavily",
+            "E) Extremely heavily"
+          ]
+        },
+        {
+          "num": "Q4:",
+          "text": "Do you regularly collaborate with regional government bodies to align your incubator's goals with public innovation funding guidelines?",
+          "options": [
+            "A) Strongly disagree",
+            "B) Disagree",
+            "C) Neutral",
+            "D) Agree",
+            "E) Strongly agree"
+          ]
+        },
+        {
+          "num": "Q5:",
+          "text": "How effectively do your incubator's resources support founders when they need to execute a strategic business model pivot?",
+          "options": [
+            "A) Not at all effectively",
+            "B) Slightly effectively",
+            "C) Moderately effectively",
+            "D) Very effectively",
+            "E) Extremely effectively"
+          ]
+        },
+        {
+          "num": "Q6:",
+          "text": "Do university-led lab research projects form the primary technology pipeline for new startups entering your incubator?",
+          "options": [
+            "A) Strongly disagree",
+            "B) Disagree",
+            "C) Neutral",
+            "D) Agree",
+            "E) Strongly agree"
+          ]
+        },
+        {
+          "num": "Q7:",
+          "text": "What level of influence do active industry mentors have on shaping the product-market fit strategies of your startups?",
+          "options": [
+            "A) No influence",
+            "B) Low influence",
+            "C) Moderate influence",
+            "D) High influence",
+            "E) Very high influence"
+          ]
+        },
+        {
+          "num": "Q8:",
+          "text": "Do administrative or bureaucratic compliance bottlenecks from the host university significantly delay your daily incubator operations?",
+          "options": [
+            "A) Strongly disagree",
+            "B) Disagree",
+            "C) Neutral",
+            "D) Agree",
+            "E) Strongly agree"
+          ]
+        },
+        {
+          "num": "Q9:",
+          "text": "How consistently do your operational workflows require empirical customer discovery evidence before you allocate internal seed funding?",
+          "options": [
+            "A) Not at all consistently",
+            "B) Slightly consistently",
+            "C) Moderately consistently",
+            "D) Very consistently",
+            "E) Extremely consistently"
+          ]
+        },
+        {
+          "num": "Q10:",
+          "text": "What is the overall extent of your incubator's reliance on trilateral networks (University-Industry-Government) to sustain its operational model?",
+          "options": [
+            "A) Not at all",
+            "B) To a small extent",
+            "C) To a moderate extent",
+            "D) To a great extent",
+            "E) To a very great extent"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Group B: Faculty Members (University Deans, HoDs, and VCs) associated with incubation programmes",
+      "questions": [
+        {
+          "num": "Q1:",
+          "text": "How actively does your faculty or department leadership promote an entrepreneurial culture alongside traditional basic research academic tracks?",
+          "options": [
+            "A) Not at all actively",
+            "B) Slightly actively",
+            "C) Moderately actively",
+            "D) Very actively",
+            "E) Extremely actively"
+          ]
+        },
+        {
+          "num": "Q2:",
+          "text": "Do you believe your university’s current tenure and promotion policies sufficiently reward faculty who actively engage in academic entrepreneurship?",
+          "options": [
+            "A) Strongly disagree",
+            "B) Disagree",
+            "C) Neutral",
+            "D) Agree",
+            "E) Strongly agree"
+          ]
+        },
+        {
+          "num": "Q3:",
+          "text": "How effectively does your university transfer intellectual property and scientific research to commercial marketplace buyers?",
+          "options": [
+            "A) Not at all effectively",
+            "B) Slightly effectively",
+            "C) Moderately effectively",
+            "D) Very effectively",
+            "E) Extremely effectively"
+          ]
+        },
+        {
+          "num": "Q4:",
+          "text": "Do you systematically encourage student researchers to test their technological concepts via customer discovery interviews before submitting peer-reviewed papers?",
+          "options": [
+            "A) Strongly disagree",
+            "B) Disagree",
+            "C) Neutral",
+            "D) Agree",
+            "E) Strongly agree"
+          ]
+        },
+        {
+          "num": "Q5:",
+          "text": "What level of structural support does your university leadership receive from government policy frameworks to operationalize incubation infrastructure?",
+          "options": [
+            "A) No support",
+            "B) Low support",
+            "C) Moderate support",
+            "D) High support",
+            "E) Very high support"
+          ]
+        },
+        {
+          "num": "Q6:",
+          "text": "Do your engineering or business curricula explicitly incorporate Lean Startup methodology concepts like Minimum Viable Product (MVP) design?",
+          "options": [
+            "A) Strongly disagree",
+            "B) Disagree",
+            "C) Neutral",
+            "D) Agree",
+            "E) Strongly agree"
+          ]
+        },
+        {
+          "num": "Q7:",
+          "text": "How frequently do active industry experts serve on your academic department's steering committees to co-create market-relevant research agendas?",
+          "options": [
+            "A) Never",
+            "B) Rarely",
+            "C) Sometimes",
+            "D) Often",
+            "E) Always"
+          ]
+        },
+        {
+          "num": "Q8:",
+          "text": "Do you face institutional stress between meeting academic publication targets and delivering commercially viable spinoff metrics for the incubator?",
+          "options": [
+            "A) Strongly disagree",
+            "B) Disagree",
+            "C) Neutral",
+            "D) Agree",
+            "E) Strongly agree"
+          ]
+        },
+        {
+          "num": "Q9:",
+          "text": "How open is your current executive leadership team to relaxing university equity-share rules to attract private venture capitalist investment?",
+          "options": [
+            "A) Not at all open",
+            "B) Slightly open",
+            "C) Moderately open",
+            "D) Very open",
+            "E) Extremely open"
+          ]
+        },
+        {
+          "num": "Q10:",
+          "text": "What is the overall commitment level of top-tier university administration to building an active local Triple Helix innovation ecosystem?",
+          "options": [
+            "A) No commitment",
+            "B) Low commitment",
+            "C) Moderate commitment",
+            "D) High commitment",
+            "E) Very high commitment"
+          ]
+        }
+      ]
+    }
+  ]
+}

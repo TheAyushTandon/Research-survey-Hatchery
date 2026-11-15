@@ -1,0 +1,926 @@
+[
+  {
+    "id": "sec_a",
+    "title": "Section A: General Information",
+    "description": "General information about the founder and startup profile.",
+    "questions": [
+      {
+        "id": "founders_a_q1",
+        "number": "Q1",
+        "text": "What is your gender?",
+        "type": "single_select",
+        "options": [
+          "Male",
+          "Female",
+          "Non-binary/Third Gender",
+          "Prefer not to say"
+        ],
+        "hasOther": false,
+        "maxSelections": null,
+        "conditional": null,
+        "required": true
+      },
+      {
+        "id": "founders_a_q2",
+        "number": "Q2",
+        "text": "What is your age group?",
+        "type": "single_select",
+        "options": [
+          "Below 25 years",
+          "25-34 years",
+          "35-44 years",
+          "45 years and above"
+        ],
+        "hasOther": false,
+        "maxSelections": null,
+        "conditional": null,
+        "required": true
+      },
+      {
+        "id": "founders_a_q3",
+        "number": "Q3",
+        "text": "What is your highest educational qualification?",
+        "type": "single_select",
+        "options": [
+          "Diploma",
+          "Bachelor's Degree",
+          "Master's Degree",
+          "Doctoral Degree (Ph.D.)",
+          "Professional Qualification",
+          "Other __________"
+        ],
+        "hasOther": true,
+        "maxSelections": null,
+        "conditional": null,
+        "required": true
+      },
+      {
+        "id": "founders_a_q4",
+        "number": "Q4",
+        "text": "What is your role in the startup?",
+        "type": "single_select",
+        "options": [
+          "Founder",
+          "Co-founder",
+          "CEO",
+          "Director",
+          "Managing Partner",
+          "Technical Founder",
+          "Other __________"
+        ],
+        "hasOther": true,
+        "maxSelections": null,
+        "conditional": null,
+        "required": true
+      },
+      {
+        "id": "founders_a_q5",
+        "number": "Q5",
+        "text": "How long has your startup been operating?",
+        "type": "single_select",
+        "options": [
+          "Less than 1 year",
+          "1-3 years",
+          "4-6 years",
+          "7-10 years",
+          "More than 10 years"
+        ],
+        "hasOther": false,
+        "maxSelections": null,
+        "conditional": null,
+        "required": true
+      },
+      {
+        "id": "founders_a_q6",
+        "number": "Q6",
+        "text": "Which stage best describes your startup?",
+        "type": "single_select",
+        "options": [
+          "Idea Stage",
+          "Prototype Development",
+          "Validation/Pilot Testing",
+          "Early Revenue Stage",
+          "Growth Stage",
+          "Scaling Stage"
+        ],
+        "hasOther": false,
+        "maxSelections": null,
+        "conditional": null,
+        "required": true
+      },
+      {
+        "id": "founders_a_q7",
+        "number": "Q7",
+        "text": "Which sector does your startup primarily operate in?",
+        "type": "single_select",
+        "options": [
+          "Biotechnology",
+          "Healthcare",
+          "Agriculture/AgriTech",
+          "Artificial Intelligence",
+          "Information Technology",
+          "EdTech",
+          "FinTech",
+          "Clean Energy",
+          "Manufacturing",
+          "Food Processing",
+          "Electronics/IoT",
+          "Social Enterprise",
+          "Other __________"
+        ],
+        "hasOther": true,
+        "maxSelections": null,
+        "conditional": null,
+        "required": true
+      },
+      {
+        "id": "founders_a_q8",
+        "number": "Q8",
+        "text": "Is your startup currently incubated?",
+        "type": "single_select",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "hasOther": false,
+        "maxSelections": null,
+        "conditional": null,
+        "required": true
+      },
+      {
+        "id": "founders_a_q9",
+        "number": "Q9",
+        "text": "If yes, what type of incubator supports your startup?",
+        "type": "single_select",
+        "options": [
+          "University/Academic Incubator",
+          "Government-supported Incubator",
+          "Private Incubator",
+          "Corporate Incubator",
+          "Accelerator Programme",
+          "Technology Business Incubator (TBI)",
+          "Biotechnology Incubator",
+          "Other __________"
+        ],
+        "hasOther": true,
+        "maxSelections": null,
+        "conditional": {
+          "questionId": "founders_a_q8",
+          "equals": "Yes"
+        },
+        "required": true
+      },
+      {
+        "id": "founders_a_q10",
+        "number": "Q10",
+        "text": "How long have you been associated with the incubator?",
+        "type": "single_select",
+        "options": [
+          "Less than 6 months",
+          "6-12 months",
+          "1-2 years",
+          "2-3 years",
+          "More than 3 years"
+        ],
+        "hasOther": false,
+        "maxSelections": null,
+        "conditional": {
+          "questionId": "founders_a_q8",
+          "equals": "Yes"
+        },
+        "required": true
+      },
+      {
+        "id": "founders_a_q11",
+        "number": "Q11",
+        "text": "How did you first learn about the incubator?",
+        "type": "single_select",
+        "options": [
+          "University/College",
+          "Government Programme",
+          "Startup Event",
+          "Social Media",
+          "Friends/Professional Network",
+          "Incubator Website",
+          "Faculty Mentor",
+          "Other __________"
+        ],
+        "hasOther": true,
+        "maxSelections": null,
+        "conditional": null,
+        "required": true
+      },
+      {
+        "id": "founders_a_q12",
+        "number": "Q12",
+        "text": "Why did you choose this incubator? (Select all that apply)",
+        "type": "multi_select",
+        "options": [
+          "Funding opportunities",
+          "Mentorship",
+          "Infrastructure",
+          "Laboratory facilities",
+          "Business networking",
+          "Investor access",
+          "Technology support",
+          "Government recognition",
+          "Market access",
+          "Intellectual Property support",
+          "Training programmes",
+          "Reputation of the incubator",
+          "Other __________"
+        ],
+        "hasOther": true,
+        "maxSelections": null,
+        "conditional": null,
+        "required": true
+      },
+      {
+        "id": "founders_a_q13",
+        "number": "Q13",
+        "text": "Which services have you received from the incubator? (Select all that apply)",
+        "type": "multi_select",
+        "options": [
+          "Office space",
+          "Laboratory facilities",
+          "Prototype development support",
+          "Business mentoring",
+          "Technical mentoring",
+          "Legal support",
+          "Patent/IP assistance",
+          "Funding assistance",
+          "Investor connections",
+          "Marketing support",
+          "Export guidance",
+          "Regulatory support",
+          "Networking events",
+          "Entrepreneurship training",
+          "International exposure",
+          "Other __________"
+        ],
+        "hasOther": true,
+        "maxSelections": null,
+        "conditional": null,
+        "required": true
+      },
+      {
+        "id": "founders_a_q14",
+        "number": "Q14",
+        "text": "Which source provided your initial funding?",
+        "type": "single_select",
+        "options": [
+          "Self-funded (Bootstrapping)",
+          "Family/Friends",
+          "Government Grant",
+          "Incubator Seed Fund",
+          "Angel Investor",
+          "Venture Capital",
+          "Bank Loan",
+          "CSR Funding",
+          "Crowdfunding",
+          "Other __________"
+        ],
+        "hasOther": true,
+        "maxSelections": null,
+        "conditional": null,
+        "required": true
+      },
+      {
+        "id": "founders_a_q15",
+        "number": "Q15",
+        "text": "What is the current size of your startup?",
+        "type": "single_select",
+        "options": [
+          "1-5 employees",
+          "6-10 employees",
+          "11-25 employees",
+          "26-50 employees",
+          "More than 50 employees"
+        ],
+        "hasOther": false,
+        "maxSelections": null,
+        "conditional": null,
+        "required": true
+      },
+      {
+        "id": "founders_a_q16",
+        "number": "Q16",
+        "text": "Has your startup received Intellectual Property (IP) support?",
+        "type": "multi_select",
+        "options": [
+          "Patent Filing",
+          "Trademark Registration",
+          "Copyright Registration",
+          "Design Registration",
+          "Technology Licensing",
+          "No IP Support Received"
+        ],
+        "hasOther": false,
+        "maxSelections": null,
+        "conditional": null,
+        "required": true
+      },
+      {
+        "id": "founders_a_q17",
+        "number": "Q17",
+        "text": "Which of the following best describes your primary customer?",
+        "type": "single_select",
+        "options": [
+          "Individual Consumers (B2C)",
+          "Businesses (B2B)",
+          "Government",
+          "Educational Institutions",
+          "Healthcare Organizations",
+          "Export Market",
+          "Mixed Customer Base"
+        ],
+        "hasOther": false,
+        "maxSelections": null,
+        "conditional": null,
+        "required": true
+      },
+      {
+        "id": "founders_a_q18",
+        "number": "Q18",
+        "text": "How often do you interact with your incubator mentors?",
+        "type": "single_select",
+        "options": [
+          "Weekly",
+          "Twice a month",
+          "Monthly",
+          "Quarterly",
+          "Rarely"
+        ],
+        "hasOther": false,
+        "maxSelections": null,
+        "conditional": null,
+        "required": true
+      },
+      {
+        "id": "founders_a_q19",
+        "number": "Q19",
+        "text": "What is the biggest challenge faced by your startup? (Select up to three)",
+        "type": "limited_multi_select",
+        "options": [
+          "Funding",
+          "Product Development",
+          "Customer Acquisition",
+          "Market Validation",
+          "Regulatory Approval",
+          "Skilled Workforce",
+          "Technology Development",
+          "Manufacturing",
+          "Intellectual Property",
+          "Scaling Operations",
+          "Competition",
+          "Export Readiness",
+          "Other __________"
+        ],
+        "hasOther": true,
+        "maxSelections": 3,
+        "conditional": null,
+        "required": true
+      },
+      {
+        "id": "founders_a_q20",
+        "number": "Q20",
+        "text": "What outcomes has your startup achieved through incubation? (Select all that apply)",
+        "type": "multi_select",
+        "options": [
+          "Product Prototype Developed",
+          "Commercial Product Launched",
+          "Revenue Generation",
+          "Patent Filed",
+          "Patent Granted",
+          "Investment Raised",
+          "Employment Created",
+          "Strategic Partnerships",
+          "Export Initiated",
+          "Research Collaboration",
+          "Technology Commercialized",
+          "Business Expansion",
+          "None of the Above"
+        ],
+        "hasOther": false,
+        "maxSelections": null,
+        "conditional": null,
+        "required": true
+      },
+      {
+        "id": "founders_a_q21",
+        "number": "Q21",
+        "text": "What type of collaboration has most benefited your startup?",
+        "type": "single_select",
+        "options": [
+          "University Researchers",
+          "Industry Experts",
+          "Government Agencies",
+          "Investors",
+          "Customers",
+          "Other Startups",
+          "International Partners"
+        ],
+        "hasOther": true,
+        "maxSelections": null,
+        "conditional": null,
+        "required": true
+      },
+      {
+        "id": "founders_a_q22",
+        "number": "Q22",
+        "text": "What is your future business goal?",
+        "type": "single_select",
+        "options": [
+          "Product Commercialization",
+          "Market Expansion",
+          "International Expansion",
+          "Investment Raising",
+          "Technology Licensing",
+          "Strategic Acquisition",
+          "Sustainable Growth",
+          "IPO",
+          "Other __________"
+        ],
+        "hasOther": true,
+        "maxSelections": null,
+        "conditional": null,
+        "required": true
+      },
+      {
+        "id": "founders_a_q23",
+        "number": "Q23",
+        "text": "Would you recommend your incubator to other entrepreneurs?",
+        "type": "single_select",
+        "options": [
+          "Definitely Yes",
+          "Probably Yes",
+          "Not Sure",
+          "Probably No",
+          "Definitely No"
+        ],
+        "hasOther": false,
+        "maxSelections": null,
+        "conditional": null,
+        "required": true
+      },
+      {
+        "id": "founders_a_q24",
+        "number": "Q24",
+        "text": "How satisfied are you with your incubation experience?",
+        "type": "single_select",
+        "options": [
+          "Very Satisfied",
+          "Satisfied",
+          "Neutral",
+          "Dissatisfied",
+          "Very Dissatisfied"
+        ],
+        "hasOther": false,
+        "maxSelections": null,
+        "conditional": null,
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "sec_b_h1",
+    "title": "Section B — Hypothesis 1",
+    "description": "H1: Academic business incubators provide mentorship based on 'Lean Start-up Theory,' which increases the market survival rate of the incubated start-ups.",
+    "questions": [
+      {
+        "id": "founders_h1_q 1",
+        "number": "Q 1",
+        "text": "Mentors at our incubator heavily teach \"Lean Start-up\" ideas, like testing early products and learning from customer feedback.",
+        "type": "likert_4",
+        "options": [
+          "A) Rarely or never",
+          "B) Occasionally",
+          "C) Frequently",
+          "D) Always"
+        ],
+        "hasOther": false,
+        "required": true
+      },
+      {
+        "id": "founders_h1_q 2",
+        "number": "Q 2",
+        "text": "Using Lean strategies like knowing when to change direction (pivot) helps our start-ups stay in business longer.",
+        "type": "likert_4",
+        "options": [
+          "A) Strongly Disagree",
+          "B) Disagree",
+          "C) Agree",
+          "D) Strongly Agree"
+        ],
+        "hasOther": false,
+        "required": true
+      },
+      {
+        "id": "founders_h1_q 3",
+        "number": "Q 3",
+        "text": "Start-ups that follow the Lean advice given by their mentors handle market challenges and changes much better.",
+        "type": "likert_4",
+        "options": [
+          "A) Not at all effectively",
+          "B) Slightly effectively",
+          "C) Moderately effectively",
+          "D) Extremely effectively"
+        ],
+        "hasOther": false,
+        "required": true
+      },
+      {
+        "id": "founders_h1_q 4",
+        "number": "Q 4",
+        "text": "Regular mentor advice focused on customer feedback helps start-ups build products that people actually want to buy.",
+        "type": "likert_4",
+        "options": [
+          "A) Not at all",
+          "B) To a small extent",
+          "C) To a moderate extent",
+          "D) To a great extent"
+        ],
+        "hasOther": false,
+        "required": true
+      },
+      {
+        "id": "founders_h1_q5",
+        "number": "Q5",
+        "text": "Start-ups using Lean methods fail much less often compared to those using old-fashioned, traditional business planning.",
+        "type": "likert_4",
+        "options": [
+          "A) Much higher failure rate",
+          "B) Same failure rate",
+          "C) Lower failure rate",
+          "D) Much lower failure rate"
+        ],
+        "hasOther": false,
+        "required": true
+      },
+      {
+        "id": "founders_h1_q6",
+        "number": "Q6",
+        "text": "How often do mentors encourage your startup to validate business ideas with potential customers before making major investments?",
+        "type": "likert_4",
+        "options": [
+          "A) Never",
+          "B) Occasionally",
+          "C) Frequently",
+          "D) Always"
+        ],
+        "hasOther": false,
+        "required": true
+      },
+      {
+        "id": "founders_h1_q7",
+        "number": "Q7",
+        "text": "To what extent has mentorship on developing a Minimum Viable Product (MVP) helped your startup reduce the risk of product failure?",
+        "type": "likert_4",
+        "options": [
+          "A) Not at all",
+          "B) To a small extent",
+          "C) To a moderate extent",
+          "D) To a great extent"
+        ],
+        "hasOther": false,
+        "required": true
+      },
+      {
+        "id": "founders_h1_q8",
+        "number": "Q8",
+        "text": "How effective has mentor guidance been in helping your startup quickly adapt its business model based on market feedback?",
+        "type": "likert_4",
+        "options": [
+          "A) Not effective",
+          "B) Slightly effective",
+          "C) Moderately effective",
+          "D) Highly effective"
+        ],
+        "hasOther": false,
+        "required": true
+      },
+      {
+        "id": "founders_h1_q9",
+        "number": "Q9",
+        "text": "Which best describes the impact of Lean Startup mentoring on your startup's ability to make informed business decisions?",
+        "type": "likert_4",
+        "options": [
+          "A) No noticeable impact",
+          "B) Limited impact",
+          "C) Moderate impact",
+          "D) Significant impact"
+        ],
+        "hasOther": false,
+        "required": true
+      },
+      {
+        "id": "founders_h1_q10",
+        "number": "Q10",
+        "text": "How much has Lean Startup-oriented mentorship contributed to the long-term sustainability of your startup?",
+        "type": "likert_4",
+        "options": [
+          "A) Not at all",
+          "B) To a limited extent",
+          "C) To a considerable extent",
+          "D) To a very great extent"
+        ],
+        "hasOther": false,
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "sec_b_h2",
+    "title": "Section B — Hypothesis 2",
+    "description": "H2: The funders who adopt lean methodologies utilize government support and backing more efficiently than those funders who use traditional methods.",
+    "questions": [
+      {
+        "id": "founders_h2_q1",
+        "number": "Q1",
+        "text": "Founders who use Lean methods are better at making the most of government grants and money without wasting it.",
+        "type": "likert_4",
+        "options": [
+          "A) Strongly Disagree",
+          "B) Disagree",
+          "C) Agree",
+          "D) Strongly Agree"
+        ],
+        "hasOther": false,
+        "required": true
+      },
+      {
+        "id": "founders_h2_q2",
+        "number": "Q2",
+        "text": "Traditional planners often waste or misuse government support because their spending plans are too strict and rigid.",
+        "type": "likert_4",
+        "options": [
+          "A) Strongly Disagree",
+          "B) Disagree",
+          "C) Agree",
+          "D) Strongly Agree"
+        ],
+        "hasOther": false,
+        "required": true
+      },
+      {
+        "id": "founders_h2_q3",
+        "number": "Q3",
+        "text": "Lean founders use government-backed perks (like tax breaks or funds) for product testing much faster than traditional founders.",
+        "type": "likert_4",
+        "options": [
+          "A) Much Slower",
+          "B) Slower",
+          "C) Faster",
+          "D) Much Faster"
+        ],
+        "hasOther": false,
+        "required": true
+      },
+      {
+        "id": "founders_h2_q4",
+        "number": "Q4",
+        "text": "The flexible nature of Lean methods makes it easier for founders to meet government rules and milestone requirements.",
+        "type": "likert_4",
+        "options": [
+          "A) Very Difficult",
+          "B) Difficult",
+          "C) Easy",
+          "D) Very Easy"
+        ],
+        "hasOther": false,
+        "required": true
+      },
+      {
+        "id": "founders_h2_q5",
+        "number": "Q5",
+        "text": "Founders who use Lean principles get a better return on investment from government support programs than those using traditional business methods.",
+        "type": "likert_4",
+        "options": [
+          "A) Much Worse",
+          "B) Worse",
+          "C) Better",
+          "D) Much Better"
+        ],
+        "hasOther": false,
+        "required": true
+      },
+      {
+        "id": "founders_h2_q6",
+        "number": "Q6",
+        "text": "How effectively do Lean Startup practices help founders utilize government funding for validating customer needs before large-scale investment?",
+        "type": "likert_4",
+        "options": [
+          "A) Not effective at all",
+          "B) Slightly effective",
+          "C) Moderately effective",
+          "D) Highly effective"
+        ],
+        "hasOther": false,
+        "required": true
+      },
+      {
+        "id": "founders_h2_q7",
+        "number": "Q7",
+        "text": "Compared with traditional approaches, how efficiently does the Lean Startup approach help founders achieve the milestones required by government-funded programmes?",
+        "type": "likert_4",
+        "options": [
+          "A) Much less efficiently",
+          "B) Less efficiently",
+          "C) More efficiently",
+          "D) Much more efficiently"
+        ],
+        "hasOther": false,
+        "required": true
+      },
+      {
+        "id": "founders_h2_q8",
+        "number": "Q8",
+        "text": "To what extent does the Lean Startup approach reduce unnecessary expenditure when using government grants or financial assistance?",
+        "type": "likert_4",
+        "options": [
+          "A) Not at all",
+          "B) To a small extent",
+          "C) To a moderate extent",
+          "D) To a great extent"
+        ],
+        "hasOther": false,
+        "required": true
+      },
+      {
+        "id": "founders_h2_q9",
+        "number": "Q9",
+        "text": "How helpful are Lean Startup practices in enabling founders to quickly respond to changes in government policies, funding guidelines, or compliance requirements?",
+        "type": "likert_4",
+        "options": [
+          "A) Not helpful",
+          "B) Slightly helpful",
+          "C) Moderately helpful",
+          "D) Highly helpful"
+        ],
+        "hasOther": false,
+        "required": true
+      },
+      {
+        "id": "founders_h2_q10",
+        "number": "Q10",
+        "text": "How much has the Lean Startup approach improved your startup's ability to maximize the benefits of government support programmes?",
+        "type": "likert_4",
+        "options": [
+          "A) Not at all",
+          "B) To a limited extent",
+          "C) To a considerable extent",
+          "D) To a very great extent"
+        ],
+        "hasOther": false,
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "sec_c",
+    "title": "Section C: Triple Helix-Based Institutional Collaboration",
+    "description": "Evaluating the trilateral collaboration between university, industry, and government resources.",
+    "questions": [
+      {
+        "id": "founders_c_q1",
+        "number": "Q1",
+        "text": "Does the incubator facilitate interactions between university researchers and a start-up?",
+        "type": "likert_4",
+        "options": [
+          "A) Strongly Disagree",
+          "B) Disagree",
+          "C) Agree",
+          "D) Strongly Agree"
+        ],
+        "hasOther": false,
+        "required": true
+      },
+      {
+        "id": "founders_c_q2",
+        "number": "Q2",
+        "text": "Does the incubator offer university research, technical expertise, and lab facilities?",
+        "type": "likert_4",
+        "options": [
+          "A) Strongly Disagree",
+          "B) Disagree",
+          "C) Agree",
+          "D) Strongly Agree"
+        ],
+        "hasOther": false,
+        "required": true
+      },
+      {
+        "id": "founders_c_q3",
+        "number": "Q3",
+        "text": "Does the incubator offer good access to the industry partners and markets?",
+        "type": "likert_4",
+        "options": [
+          "A) Strongly Disagree",
+          "B) Disagree",
+          "C) Agree",
+          "D) Strongly Agree"
+        ],
+        "hasOther": false,
+        "required": true
+      },
+      {
+        "id": "founders_c_q4",
+        "number": "Q4",
+        "text": "Do corporate mentors provide valuable insight into the market entry and commercialization process?",
+        "type": "likert_4",
+        "options": [
+          "A) Strongly Disagree",
+          "B) Disagree",
+          "C) Agree",
+          "D) Strongly Agree"
+        ],
+        "hasOther": false,
+        "required": true
+      },
+      {
+        "id": "founders_c_q5",
+        "number": "Q5",
+        "text": "Does the incubator facilitate connections to relevant government programs and grants?",
+        "type": "likert_4",
+        "options": [
+          "A) Strongly Disagree",
+          "B) Disagree",
+          "C) Agree",
+          "D) Strongly Agree"
+        ],
+        "hasOther": false,
+        "required": true
+      },
+      {
+        "id": "founders_c_q6",
+        "number": "Q6",
+        "text": "Does incubator support help your start-up comply with policy and legal regulations?",
+        "type": "likert_4",
+        "options": [
+          "A) Strongly Disagree",
+          "B) Disagree",
+          "C) Agree",
+          "D) Strongly Agree"
+        ],
+        "hasOther": false,
+        "required": true
+      },
+      {
+        "id": "founders_c_q7",
+        "number": "Q7",
+        "text": "Do government programs in the incubator help you build relationships with researchers and industry partners?",
+        "type": "likert_4",
+        "options": [
+          "A) Strongly Disagree",
+          "B) Disagree",
+          "C) Agree",
+          "D) Strongly Agree"
+        ],
+        "hasOther": false,
+        "required": true
+      },
+      {
+        "id": "founders_c_q8",
+        "number": "Q8",
+        "text": "Does the incubator effectively bridge university, industry, and government resources, thus accelerating start up development?",
+        "type": "likert_4",
+        "options": [
+          "A) Strongly Disagree",
+          "B) Disagree",
+          "C) Agree",
+          "D) Strongly Agree"
+        ],
+        "hasOther": false,
+        "required": true
+      },
+      {
+        "id": "founders_c_q9",
+        "number": "Q9",
+        "text": "Do collaborative projects help shorten product development cycles?",
+        "type": "likert_4",
+        "options": [
+          "A) Strongly Disagree",
+          "B) Disagree",
+          "C) Agree",
+          "D) Strongly Agree"
+        ],
+        "hasOther": false,
+        "required": true
+      },
+      {
+        "id": "founders_c_q10",
+        "number": "Q10",
+        "text": "Does the cooperation between university, industry, and government contribute to start up’s capacity building?",
+        "type": "likert_4",
+        "options": [
+          "A) Strongly Disagree",
+          "B) Disagree",
+          "C) Agree",
+          "D) Strongly Agree"
+        ],
+        "hasOther": false,
+        "required": true
+      }
+    ]
+  }
+]

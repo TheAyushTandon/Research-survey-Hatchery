@@ -1,0 +1,24 @@
+{
+  "name": "research-questionnaires-root",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Academic Research Questionnaire Platform - 3 Independent Deployments",
+  "workspaces": [
+    "founders",
+    "institutional",
+    "government"
+  ],
+  "scripts": {
+    "dev:founders": "npm run dev --workspace=founders",
+    "dev:institutional": "npm run dev --workspace=institutional",
+    "dev:government": "npm run dev --workspace=government",
+    "build:founders": "npm run build --workspace=founders",
+    "build:institutional": "npm run build --workspace=institutional",
+    "build:government": "npm run build --workspace=government",
+    "build:all": "npm run build --workspaces",
+    "token:generate": "node scripts/generate-invitation-token.js"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

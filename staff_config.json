@@ -1,0 +1,159 @@
+[
+  {
+    "id": "group_a",
+    "title": "Group A: Incubator Managers and Operational Staff",
+    "description": "Assessment of incubator workflows, startup feedback loops, and institutional collaboration.",
+    "questions": [
+      {
+        "id": "staff_q1",
+        "number": "Q1",
+        "text": "How systematically does your incubator train startups to implement the Build-Measure-Learn feedback loop?",
+        "type": "likert_5",
+        "options": [
+          "A) Not at all systematically",
+          "B) Slightly systematically",
+          "C) Moderately systematically",
+          "D) Very systematically",
+          "E) Extremely systematically"
+        ],
+        "hasOther": false,
+        "required": true
+      },
+      {
+        "id": "staff_q2",
+        "number": "Q2",
+        "text": "Do you actively facilitate formal joint venture agreements between your incubated startups and external industry partners?",
+        "type": "likert_5",
+        "options": [
+          "A) Strongly disagree",
+          "B) Disagree",
+          "C) Neutral",
+          "D) Agree",
+          "E) Strongly agree"
+        ],
+        "hasOther": false,
+        "required": true
+      },
+      {
+        "id": "staff_q3",
+        "number": "Q3",
+        "text": "How heavily does your operational staff rely on validated learning metrics over traditional financial metrics when evaluating early-stage startups?",
+        "type": "likert_5",
+        "options": [
+          "A) Not at all heavily",
+          "B) Slightly heavily",
+          "C) Moderately heavily",
+          "D) Very heavily",
+          "E) Extremely heavily"
+        ],
+        "hasOther": false,
+        "required": true
+      },
+      {
+        "id": "staff_q4",
+        "number": "Q4",
+        "text": "Do you regularly collaborate with regional government bodies to align your incubator's goals with public innovation funding guidelines?",
+        "type": "likert_5",
+        "options": [
+          "A) Strongly disagree",
+          "B) Disagree",
+          "C) Neutral",
+          "D) Agree",
+          "E) Strongly agree"
+        ],
+        "hasOther": false,
+        "required": true
+      },
+      {
+        "id": "staff_q5",
+        "number": "Q5",
+        "text": "How effectively do your incubator's resources support founders when they need to execute a strategic business model pivot?",
+        "type": "likert_5",
+        "options": [
+          "A) Not at all effectively",
+          "B) Slightly effectively",
+          "C) Moderately effectively",
+          "D) Very effectively",
+          "E) Extremely effectively"
+        ],
+        "hasOther": false,
+        "required": true
+      },
+      {
+        "id": "staff_q6",
+        "number": "Q6",
+        "text": "Do university-led lab research projects form the primary technology pipeline for new startups entering your incubator?",
+        "type": "likert_5",
+        "options": [
+          "A) Strongly disagree",
+          "B) Disagree",
+          "C) Neutral",
+          "D) Agree",
+          "E) Strongly agree"
+        ],
+        "hasOther": false,
+        "required": true
+      },
+      {
+        "id": "staff_q7",
+        "number": "Q7",
+        "text": "What level of influence do active industry mentors have on shaping the product-market fit strategies of your startups?",
+        "type": "likert_5",
+        "options": [
+          "A) No influence",
+          "B) Low influence",
+          "C) Moderate influence",
+          "D) High influence",
+          "E) Very high influence"
+        ],
+        "hasOther": false,
+        "required": true
+      },
+      {
+        "id": "staff_q8",
+        "number": "Q8",
+        "text": "Do administrative or bureaucratic compliance bottlenecks from the host university significantly delay your daily incubator operations?",
+        "type": "likert_5",
+        "options": [
+          "A) Strongly disagree",
+          "B) Disagree",
+          "C) Neutral",
+          "D) Agree",
+          "E) Strongly agree"
+        ],
+        "hasOther": false,
+        "required": true
+      },
+      {
+        "id": "staff_q9",
+        "number": "Q9",
+        "text": "How consistently do your operational workflows require empirical customer discovery evidence before you allocate internal seed funding?",
+        "type": "likert_5",
+        "options": [
+          "A) Not at all consistently",
+          "B) Slightly consistently",
+          "C) Moderately consistently",
+          "D) Very consistently",
+          "E) Extremely consistently"
+        ],
+        "hasOther": false,
+        "required": true
+      },
+      {
+        "id": "staff_q10",
+        "number": "Q10",
+        "text": "What is the overall extent of your incubator's reliance on trilateral networks (University-Industry-Government) to sustain its operational model?",
+        "type": "likert_5",
+        "options": [
+          "A) Not at all",
+          "B) To a small extent",
+          "C) To a moderate extent",
+          "D) To a great extent",
+          "E) To a very great extent"
+        ],
+        "hasOther": false,
+        "required": true
+      }
+    ]
+  }
+]
