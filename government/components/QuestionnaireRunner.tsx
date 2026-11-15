@@ -40,13 +40,19 @@ export function QuestionnaireRunner({
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
+      try {
+        localStorage.removeItem(`sessionId_${config.id}`);
+        localStorage.removeItem(`token_${config.id}`);
+        localStorage.removeItem(`resumeCode_${config.id}`);
+      } catch (e) {}
+
       const urlParams = new URLSearchParams(window.location.search);
       const urlToken = urlParams.get('token');
       if (urlToken) {
         setToken(urlToken);
       }
     }
-  }, [defaultToken]);
+  }, [config.id, defaultToken]);
 
   const handleIntakeSubmit = async (respondent: RespondentInfo) => {
     setAutosaveStatus('saving');
